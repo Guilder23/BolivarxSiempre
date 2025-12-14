@@ -55,12 +55,26 @@ require_once __DIR__ . '/config/database.php';
                 </ul>
             </div>
         </div>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/bolivarxsiempre" target="_blank" rel="noopener noreferrer" class="facebook" title="Síguenos en Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.instagram.com/bolivarxsiempre" target="_blank" rel="noopener noreferrer" class="instagram" title="Síguenos en Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.tiktok.com/@bolivarxsiempre" target="_blank" rel="noopener noreferrer" class="tiktok" title="Síguenos en TikTok">
+                <i class="fab fa-tiktok"></i>
+            </a>
+            <a href="javascript:compartirPagina();" class="share-btn" title="Compartir esta página">
+                <i class="fas fa-share-alt"></i>
+            </a>
+        </div>
         <div class="footer-bottom">
             © 2025 - Bolivar por siempre - Todos los derechos reservados
             <p style="margin-top: 10px; font-size: 1.1em; font-weight: 700; color: #a8bbd4ff; letter-spacing: 0.5px;">Desarrollado por <strong style="color: #c6d6f1ff;">Guilder Paredes Lovera</strong></p>
         </div>
     </footer>
 
-    <script src="assets/js/index.js"></script>
+    <script src="assets/js/share.js"></script>
 </body>
 </html>

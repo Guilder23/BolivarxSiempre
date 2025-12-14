@@ -1,0 +1,104 @@
+/* ===== SOCIAL MEDIA ICONS ===== */
+.social-icons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.social-icons a {
+    display: inline-flex;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 20px;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.social-icons a:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
+/* Facebook */
+.social-icons a.facebook {
+    color: #1877f2;
+    background: rgba(24, 119, 242, 0.1);
+    border-color: #1877f2;
+}
+
+.social-icons a.facebook:hover {
+    background: #1877f2;
+    color: white;
+    box-shadow: 0 5px 15px rgba(24, 119, 242, 0.4);
+}
+
+/* Instagram */
+.social-icons a.instagram {
+    color: #e4405f;
+    background: rgba(228, 64, 95, 0.1);
+    border-color: #e4405f;
+}
+
+.social-icons a.instagram:hover {
+    background: #e4405f;
+    color: white;
+    box-shadow: 0 5px 15px rgba(228, 64, 95, 0.4);
+}
+
+/* TikTok */
+.social-icons a.tiktok {
+    color: #000;
+    background: rgba(0, 0, 0, 0.1);
+    border-color: #000;
+}
+
+.social-icons a.tiktok:hover {
+    background: #000;
+    color: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Botón Compartir */
+.social-icons a.share-btn {
+    color: #5a7bb7;
+    background: rgba(90, 123, 183, 0.1);
+    border-color: #5a7bb7;
+}
+
+.social-icons a.share-btn:hover {
+    background: #5a7bb7;
+    color: white;
+    box-shadow: 0 5px 15px rgba(90, 123, 183, 0.4);
+}
+
+/* Para footers con fondo oscuro */
+.footer .social-icons a {
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.footer .social-icons a.facebook {
+    color: #fff;
+}
+
+.footer .social-icons a.instagram {
+    color: #fff;
+}
+
+.footer .social-icons a.tiktok {
+    color: #fff;
+}
+
+.footer .social-icons a:hover {
+    background: rgba(255, 255, 255, 0.25);
+}
