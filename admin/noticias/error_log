@@ -1,0 +1,32 @@
+[11-Dec-2025 11:03:43 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/noticias/noticias.php:222
+Stack trace:
+#0 {main}
+  thrown in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/noticias/noticias.php on line 222
+[11-Dec-2025 11:04:08 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/noticias/noticias.php:222
+Stack trace:
+#0 {main}
+  thrown in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/noticias/noticias.php on line 222
+[11-Dec-2025 11:04:39 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/noticias/noticias.php:222
+Stack trace:
+#0 {main}
+  thrown in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/noticias/noticias.php on line 222
+[11-Dec-2025 11:15:20 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/noticias/noticias.php:222
+Stack trace:
+#0 {main}
+  thrown in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/noticias/noticias.php on line 222
+[11-Dec-2025 11:15:39 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/noticias/noticias.php:222
+Stack trace:
+#0 {main}
+  thrown in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/noticias/noticias.php on line 222
+[11-Dec-2025 11:36:33 UTC] PHP Warning:  require_once(../config/database.php): Failed to open stream: No such file or directory in /home/bolivarx/public_html/mi.bolivarxsiempre.com/config/database.php on line 3
+[11-Dec-2025 11:36:33 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '../config/database.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/bolivarx/public_html/mi.bolivarxsiempre.com/config/database.php:3
+Stack trace:
+#0 /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/noticias/noticias.php(2): require_once()
+#1 {main}
+  thrown in /home/bolivarx/public_html/mi.bolivarxsiempre.com/config/database.php on line 3
+[11-Dec-2025 11:37:00 UTC] PHP Warning:  require_once(../config/database.php): Failed to open stream: No such file or directory in /home/bolivarx/public_html/mi.bolivarxsiempre.com/config/database.php on line 3
+[11-Dec-2025 11:37:00 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '../config/database.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/bolivarx/public_html/mi.bolivarxsiempre.com/config/database.php:3
+Stack trace:
+#0 /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/noticias/noticias.php(2): require_once()
+#1 {main}
+  thrown in /home/bolivarx/public_html/mi.bolivarxsiempre.com/config/database.php on line 3

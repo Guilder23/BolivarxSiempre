@@ -1,0 +1,324 @@
+[11-Dec-2025 11:16:46 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'usuario_id' in 'field list' in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php:94
+Stack trace:
+#0 /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php(94): mysqli->query()
+#1 {main}
+  thrown in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 94
+[11-Dec-2025 11:16:48 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'usuario_id' in 'field list' in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php:94
+Stack trace:
+#0 /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php(94): mysqli->query()
+#1 {main}
+  thrown in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 94
+[11-Dec-2025 11:16:48 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'usuario_id' in 'field list' in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php:94
+Stack trace:
+#0 /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php(94): mysqli->query()
+#1 {main}
+  thrown in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 94
+[11-Dec-2025 11:16:50 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'usuario_id' in 'field list' in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php:94
+Stack trace:
+#0 /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php(94): mysqli->query()
+#1 {main}
+  thrown in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 94
+[11-Dec-2025 11:16:50 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'usuario_id' in 'field list' in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php:94
+Stack trace:
+#0 /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php(94): mysqli->query()
+#1 {main}
+  thrown in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 94
+[11-Dec-2025 11:16:50 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'usuario_id' in 'field list' in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php:94
+Stack trace:
+#0 /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php(94): mysqli->query()
+#1 {main}
+  thrown in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 94
+[11-Dec-2025 11:16:51 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'usuario_id' in 'field list' in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php:94
+Stack trace:
+#0 /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php(94): mysqli->query()
+#1 {main}
+  thrown in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 94
+[11-Dec-2025 11:16:56 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'usuario_id' in 'field list' in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php:94
+Stack trace:
+#0 /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php(94): mysqli->query()
+#1 {main}
+  thrown in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 94
+[11-Dec-2025 11:17:06 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'usuario_id' in 'field list' in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php:94
+Stack trace:
+#0 /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php(94): mysqli->query()
+#1 {main}
+  thrown in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 94
+[11-Dec-2025 11:17:08 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'usuario_id' in 'field list' in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php:94
+Stack trace:
+#0 /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php(94): mysqli->query()
+#1 {main}
+  thrown in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 94
+[11-Dec-2025 11:17:09 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'usuario_id' in 'field list' in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php:94
+Stack trace:
+#0 /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php(94): mysqli->query()
+#1 {main}
+  thrown in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 94
+[11-Dec-2025 11:17:10 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'usuario_id' in 'field list' in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php:94
+Stack trace:
+#0 /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php(94): mysqli->query()
+#1 {main}
+  thrown in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 94
+[11-Dec-2025 11:17:11 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'usuario_id' in 'field list' in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php:94
+Stack trace:
+#0 /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php(94): mysqli->query()
+#1 {main}
+  thrown in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 94
+[11-Dec-2025 11:17:11 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'usuario_id' in 'field list' in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php:94
+Stack trace:
+#0 /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php(94): mysqli->query()
+#1 {main}
+  thrown in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 94
+[11-Dec-2025 11:17:13 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'usuario_id' in 'field list' in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php:94
+Stack trace:
+#0 /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php(94): mysqli->query()
+#1 {main}
+  thrown in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 94
+[11-Dec-2025 11:17:13 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'usuario_id' in 'field list' in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php:94
+Stack trace:
+#0 /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php(94): mysqli->query()
+#1 {main}
+  thrown in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 94
+[11-Dec-2025 11:17:14 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'usuario_id' in 'field list' in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php:94
+Stack trace:
+#0 /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php(94): mysqli->query()
+#1 {main}
+  thrown in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 94
+[11-Dec-2025 11:17:14 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'usuario_id' in 'field list' in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php:94
+Stack trace:
+#0 /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php(94): mysqli->query()
+#1 {main}
+  thrown in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 94
+[11-Dec-2025 11:17:18 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'usuario_id' in 'field list' in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php:94
+Stack trace:
+#0 /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php(94): mysqli->query()
+#1 {main}
+  thrown in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 94
+[11-Dec-2025 11:17:18 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'usuario_id' in 'field list' in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php:94
+Stack trace:
+#0 /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php(94): mysqli->query()
+#1 {main}
+  thrown in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 94
+[11-Dec-2025 11:17:19 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'usuario_id' in 'field list' in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php:94
+Stack trace:
+#0 /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php(94): mysqli->query()
+#1 {main}
+  thrown in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 94
+[11-Dec-2025 11:17:19 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'usuario_id' in 'field list' in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php:94
+Stack trace:
+#0 /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php(94): mysqli->query()
+#1 {main}
+  thrown in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 94
+[11-Dec-2025 11:18:25 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'usuario_id' in 'field list' in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php:94
+Stack trace:
+#0 /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php(94): mysqli->query()
+#1 {main}
+  thrown in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 94
+[11-Dec-2025 11:29:27 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'usuario_id' in 'field list' in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php:94
+Stack trace:
+#0 /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php(94): mysqli->query()
+#1 {main}
+  thrown in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 94
+[11-Dec-2025 11:29:28 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'usuario_id' in 'field list' in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php:94
+Stack trace:
+#0 /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php(94): mysqli->query()
+#1 {main}
+  thrown in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 94
+[11-Dec-2025 11:29:28 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'usuario_id' in 'field list' in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php:94
+Stack trace:
+#0 /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php(94): mysqli->query()
+#1 {main}
+  thrown in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 94
+[11-Dec-2025 11:29:39 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'usuario_id' in 'field list' in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php:94
+Stack trace:
+#0 /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php(94): mysqli->query()
+#1 {main}
+  thrown in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 94
+[11-Dec-2025 11:29:44 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'usuario_id' in 'field list' in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php:94
+Stack trace:
+#0 /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php(94): mysqli->query()
+#1 {main}
+  thrown in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 94
+[11-Dec-2025 11:29:44 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'usuario_id' in 'field list' in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php:94
+Stack trace:
+#0 /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php(94): mysqli->query()
+#1 {main}
+  thrown in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 94
+[11-Dec-2025 11:29:44 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'usuario_id' in 'field list' in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php:94
+Stack trace:
+#0 /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php(94): mysqli->query()
+#1 {main}
+  thrown in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 94
+[11-Dec-2025 11:29:45 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'usuario_id' in 'field list' in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php:94
+Stack trace:
+#0 /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php(94): mysqli->query()
+#1 {main}
+  thrown in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 94
+[11-Dec-2025 11:30:17 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'usuario_id' in 'field list' in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php:94
+Stack trace:
+#0 /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php(94): mysqli->query()
+#1 {main}
+  thrown in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 94
+[11-Dec-2025 11:30:23 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'usuario_id' in 'field list' in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php:94
+Stack trace:
+#0 /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php(94): mysqli->query()
+#1 {main}
+  thrown in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 94
+[11-Dec-2025 11:30:27 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'usuario_id' in 'field list' in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php:94
+Stack trace:
+#0 /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php(94): mysqli->query()
+#1 {main}
+  thrown in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 94
+[11-Dec-2025 11:30:27 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'usuario_id' in 'field list' in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php:94
+Stack trace:
+#0 /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php(94): mysqli->query()
+#1 {main}
+  thrown in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 94
+[11-Dec-2025 11:32:47 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[11-Dec-2025 11:33:05 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[11-Dec-2025 11:33:05 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[11-Dec-2025 11:33:11 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[11-Dec-2025 11:33:11 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[11-Dec-2025 11:36:29 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function requerir_admin() in /home/bolivarx/public_html/mi.bolivarxsiempre.com/config/database.php:6
+Stack trace:
+#0 /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php(3): require_once()
+#1 {main}
+  thrown in /home/bolivarx/public_html/mi.bolivarxsiempre.com/config/database.php on line 6
+[11-Dec-2025 11:36:31 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function requerir_admin() in /home/bolivarx/public_html/mi.bolivarxsiempre.com/config/database.php:6
+Stack trace:
+#0 /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php(3): require_once()
+#1 {main}
+  thrown in /home/bolivarx/public_html/mi.bolivarxsiempre.com/config/database.php on line 6
+[11-Dec-2025 11:36:31 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function requerir_admin() in /home/bolivarx/public_html/mi.bolivarxsiempre.com/config/database.php:6
+Stack trace:
+#0 /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php(3): require_once()
+#1 {main}
+  thrown in /home/bolivarx/public_html/mi.bolivarxsiempre.com/config/database.php on line 6
+[11-Dec-2025 11:41:18 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[11-Dec-2025 11:41:18 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[11-Dec-2025 11:41:29 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[11-Dec-2025 11:41:29 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[11-Dec-2025 11:42:11 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[11-Dec-2025 11:42:11 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[11-Dec-2025 13:05:11 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[11-Dec-2025 13:05:11 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[11-Dec-2025 13:13:02 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[11-Dec-2025 13:13:02 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[11-Dec-2025 13:35:11 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[11-Dec-2025 13:35:11 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[11-Dec-2025 13:46:17 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[11-Dec-2025 13:46:17 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[11-Dec-2025 14:36:05 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[11-Dec-2025 14:36:05 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[11-Dec-2025 14:37:34 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[11-Dec-2025 14:37:34 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[11-Dec-2025 14:37:34 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[11-Dec-2025 15:48:58 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[11-Dec-2025 15:48:58 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[11-Dec-2025 15:49:21 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[11-Dec-2025 15:49:21 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[11-Dec-2025 15:49:33 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[11-Dec-2025 15:49:33 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[11-Dec-2025 15:49:45 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[11-Dec-2025 15:49:45 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[11-Dec-2025 15:50:15 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[11-Dec-2025 15:50:15 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[11-Dec-2025 15:50:42 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[11-Dec-2025 15:50:42 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[11-Dec-2025 15:50:53 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[11-Dec-2025 15:50:53 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[11-Dec-2025 16:16:11 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[11-Dec-2025 16:16:11 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[11-Dec-2025 16:22:36 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[11-Dec-2025 16:22:36 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[11-Dec-2025 16:23:35 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[11-Dec-2025 16:23:35 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[11-Dec-2025 16:23:41 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[11-Dec-2025 16:23:41 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[11-Dec-2025 16:40:44 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[11-Dec-2025 16:40:44 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[11-Dec-2025 16:45:00 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[11-Dec-2025 16:45:00 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[11-Dec-2025 16:45:10 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[11-Dec-2025 16:45:10 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[11-Dec-2025 16:45:16 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[11-Dec-2025 16:45:16 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[11-Dec-2025 16:45:21 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[11-Dec-2025 16:45:21 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[11-Dec-2025 16:47:02 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[11-Dec-2025 16:56:58 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[11-Dec-2025 17:04:41 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[11-Dec-2025 17:04:46 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[11-Dec-2025 17:05:03 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[11-Dec-2025 17:05:10 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[11-Dec-2025 17:13:48 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[11-Dec-2025 17:14:15 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[11-Dec-2025 17:14:33 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[11-Dec-2025 17:14:40 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[11-Dec-2025 19:31:04 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[11-Dec-2025 19:31:57 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[11-Dec-2025 19:32:14 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[11-Dec-2025 19:32:39 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[11-Dec-2025 19:33:35 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[11-Dec-2025 19:51:12 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[11-Dec-2025 19:51:26 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[11-Dec-2025 19:53:31 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[11-Dec-2025 20:19:55 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[11-Dec-2025 20:21:02 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[11-Dec-2025 20:25:43 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[11-Dec-2025 20:25:58 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[11-Dec-2025 20:26:07 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[11-Dec-2025 20:26:10 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[11-Dec-2025 20:30:14 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[11-Dec-2025 20:31:52 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[11-Dec-2025 20:31:58 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[11-Dec-2025 20:32:01 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[11-Dec-2025 20:32:18 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[11-Dec-2025 20:32:29 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[11-Dec-2025 21:55:26 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[11-Dec-2025 22:01:56 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[11-Dec-2025 22:01:56 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[12-Dec-2025 03:35:34 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[12-Dec-2025 03:35:34 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[12-Dec-2025 03:35:50 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[12-Dec-2025 03:35:50 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[12-Dec-2025 03:35:50 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[12-Dec-2025 03:36:35 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[12-Dec-2025 03:36:35 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[12-Dec-2025 03:36:35 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[12-Dec-2025 03:36:44 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[12-Dec-2025 03:36:44 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[12-Dec-2025 03:36:44 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[12-Dec-2025 03:36:49 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[12-Dec-2025 03:36:49 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[12-Dec-2025 03:36:49 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[12-Dec-2025 03:43:47 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[12-Dec-2025 03:43:47 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[12-Dec-2025 03:43:47 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[12-Dec-2025 03:43:57 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[12-Dec-2025 03:43:57 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[12-Dec-2025 03:53:28 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[12-Dec-2025 03:53:28 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[12-Dec-2025 03:53:55 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[12-Dec-2025 03:53:55 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[12-Dec-2025 03:53:55 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[12-Dec-2025 03:54:02 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[12-Dec-2025 03:54:02 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[12-Dec-2025 03:54:02 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[12-Dec-2025 03:54:20 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[12-Dec-2025 03:54:20 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[12-Dec-2025 12:43:03 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[12-Dec-2025 12:43:03 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[12-Dec-2025 12:43:58 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[12-Dec-2025 12:43:58 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[12-Dec-2025 12:44:32 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[12-Dec-2025 12:44:32 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[12-Dec-2025 12:46:10 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[12-Dec-2025 12:46:10 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[12-Dec-2025 12:46:49 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[12-Dec-2025 12:46:49 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[12-Dec-2025 15:52:29 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[12-Dec-2025 15:52:29 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[12-Dec-2025 16:04:15 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[12-Dec-2025 16:04:15 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[14-Dec-2025 03:55:45 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
+[14-Dec-2025 03:55:45 UTC] PHP Warning:  Undefined array key "usuario_id" in /home/bolivarx/public_html/mi.bolivarxsiempre.com/admin/dashboard.php on line 99
