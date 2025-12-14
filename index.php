@@ -100,7 +100,7 @@ if (!$ultima_noticia) {
                 </div>
 
                 <div class="card-content">
-                    <span class="card-title">NOTICIAS</span>
+                    <span class="card-title">LO ULTIMO</span>
                     <p class="card-date" style="font-size: 0.85rem; color: #5a7bb7; margin-bottom: 0.5rem;"><?php echo $ultima_noticia['fecha']; ?></p>
                     <p class="card-desc" style="text-transform: uppercase;">
                         <strong><?php echo htmlspecialchars($ultima_noticia['titulo']); ?></strong>
@@ -129,7 +129,7 @@ if (!$ultima_noticia) {
                     <img src="assets/img/LoUltimo.jpeg" alt="Sugerencias">
                 </div>
                 <div class="card-content">
-                    <span class="card-title">SUGERENCIAS</span>
+                    <span class="card-title">BUZÓN DE SUGERENCIAS</span>
                     <p class="card-desc">¿Tienes ideas para mejorar el equipo? Aquí puedes compartir tus sugerencias y propuestas. Tu opinión es importante para que el equipo y la institución continúen mejorando.</p>
                     <a href="sugerencias.php" class="card-btn">Ver más</a>
                 </div>

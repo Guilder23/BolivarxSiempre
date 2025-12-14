@@ -64,7 +64,7 @@ if ($conn) {
     <main class="page-container">
         <div class="page-header">
             <img src="assets/img/LaOpinion.jpeg" alt="Sugerencias">
-            <h1>Sugerencias para Mejorar</h1>
+            <h1>Buzón de Sugerencias</h1>
         </div>
 
         <div class="page-content" style="text-align: justify;">
