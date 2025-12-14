@@ -2,18 +2,17 @@
 // ===== CONFIGURACIÓN DE BASE DE DATOS =====
 // Cambiar estos valores según tu configuración
 
-// ===== CONFIGURACIÓN DE BASE DE DATOS =====
-// ¡DATOS CORRECTOS SEGÚN TUS IMÁGENES!
 const DB_HOST = 'localhost';
-const DB_USER = 'bolivarx_admin';
-const DB_PASS = 'MiBolivar123';              // La contraseña nueva que pusiste
-const DB_NAME = 'bolivarx_club_bolivar';   // Nombre EXACTO de tu BD
+const DB_USER = 'root';
+const DB_PASS = '';
+const DB_NAME = 'club_bolivar';
 
 // ===== CONFIGURACIÓN GENERAL =====
 const APP_NAME = 'Club Bolívar';
-const APP_URL = 'https://mi.bolivarxsiempre.com';
-const UPLOAD_PATH = __DIR__ . '/assets/img/noticias/';  // Corregido
+const APP_URL = 'http://localhost:8000';
+const UPLOAD_PATH = __DIR__ . '/../assets/img/noticias/';
 const UPLOAD_URL = '/assets/img/noticias/';
+
 // ===== CREAR CONEXIÓN A LA BASE DE DATOS =====
 $conn = null;
 try {

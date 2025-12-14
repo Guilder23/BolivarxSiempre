@@ -123,15 +123,15 @@ if (!$ultima_noticia) {
                 </div>
             </div>
 
-            <!-- Card Lo Último -->
-            <div class="card-main card-3 card-with-image" id="ultimo">
+            <!-- Card Lo Último/Sugerencias -->
+            <div class="card-main card-3 card-with-image" id="sugerencias">
                 <div class="card-header-image">
-                    <img src="assets/img/LoUltimo.jpeg" alt="Lo Último">
+                    <img src="assets/img/LoUltimo.jpeg" alt="Sugerencias">
                 </div>
                 <div class="card-content">
-                    <span class="card-title">LO ÚLTIMO</span>
-                    <p class="card-desc">Tres minutos de pausa. Debido a las altas temperaturas, la FIFA anunció que previa decisión del árbitro habrá tres minutos de hidratación en cada tiempo (cooling breack)Tres minutos de pausa. Debido a las altas temperaturas, la FIFA anunció que previa decisión del árbitro habrá tres minutos de hidratación en cada tiempo (cooling breack).</p>
-                    <a href="destacado.php" class="card-btn">Ver más</a>
+                    <span class="card-title">SUGERENCIAS</span>
+                    <p class="card-desc">¿Tienes ideas para mejorar el equipo? Aquí puedes compartir tus sugerencias y propuestas. Tu opinión es importante para que el equipo y la institución continúen mejorando.</p>
+                    <a href="sugerencias.php" class="card-btn">Ver más</a>
                 </div>
             </div>
 
@@ -194,6 +194,7 @@ if (!$ultima_noticia) {
                     <li><a href="tabla.php">Tabla de Posiciones</a></li>
                     <li><a href="destacado.php">Lo Destacado</a></li>
                     <li><a href="opinion.php">Opinión</a></li>
+                    <li><a href="sugerencias.php">Sugerencias</a></li>
                 </ul>
             </div>
             <div class="footer-section admin">

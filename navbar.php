@@ -12,6 +12,7 @@ require_once __DIR__ . '/config/database.php';
         <li><a href="index.php">Inicio</a></li>
         <li><a href="mision.php">Misión y Visión</a></li>
         <li><a href="opinion.php">Opinión</a></li>
+        <li><a href="sugerencias.php">Sugerencias</a></li>
         <li><a href="destacado.php">Lo Último</a></li>
         <li><a href="historia.php">Historia</a></li>
         <li><a href="tabla.php">Tabla</a></li>

@@ -44,6 +44,7 @@ require_once __DIR__ . '/config/database.php';
                     <li><a href="tabla.php">Tabla de Posiciones</a></li>
                     <li><a href="destacado.php">Lo Destacado</a></li>
                     <li><a href="opinion.php">Opinión</a></li>
+                    <li><a href="sugerencias.php">Sugerencias</a></li>
                 </ul>
             </div>
             <div class="footer-section admin">

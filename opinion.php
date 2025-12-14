@@ -1,53 +1,7 @@
 <?php
 // Incluir configuración
 require_once __DIR__ . '/config/database.php';
-
-// Procesar envío de comentario
-$mensaje = '';
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['nombre']) && isset($_POST['comentario'])) {
-    $nombre = escapar($_POST['nombre'] ?? '');
-    $comentario = escapar($_POST['comentario'] ?? '');
-    
-    if (!empty($nombre) && !empty($comentario)) {
-        if ($conn) {
-            $consulta = "INSERT INTO comentarios (nombre, comentario) VALUES ('$nombre', '$comentario')";
-            if ($conn->query($consulta)) {
-                // Guardar mensaje en sesión
-                $_SESSION['mensaje_comentario'] = 'Comentario publicado exitosamente';
-                $_SESSION['tipo_mensaje'] = 'success';
-                // Redirigir para evitar duplicados al recargar
-                header("Location: opinion.php");
-                exit();
-            } else {
-                $_SESSION['mensaje_comentario'] = 'Error al publicar el comentario';
-                $_SESSION['tipo_mensaje'] = 'error';
-            }
-        }
-    } else {
-        $_SESSION['mensaje_comentario'] = 'Por favor completa todos los campos';
-        $_SESSION['tipo_mensaje'] = 'error';
-    }
-}
-
-// Recuperar mensaje de sesión si existe
-if (isset($_SESSION['mensaje_comentario'])) {
-    $mensaje = $_SESSION['mensaje_comentario'];
-    $tipo_mensaje = $_SESSION['tipo_mensaje'];
-    // Eliminar el mensaje de la sesión después de mostrarlo una vez
-    unset($_SESSION['mensaje_comentario']);
-    unset($_SESSION['tipo_mensaje']);
-}
-
-// Obtener comentarios
-$comentarios = [];
-if ($conn) {
-    $resultado = $conn->query("SELECT nombre, comentario, fecha_creacion FROM comentarios ORDER BY fecha_creacion DESC");
-    if ($resultado) {
-        while ($fila = $resultado->fetch_assoc()) {
-            $comentarios[] = $fila;
-        }
-    }
-}
+?>
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -104,68 +58,6 @@ if ($conn) {
                 </p>
             </article>
 
-            <!-- SECCIÓN DE COMENTARIOS -->
-            <section class="comentarios-section">
-                <h2>Opiniones de Nuestros Seguidores</h2>
-                
-                <!-- COMENTARIOS PUBLICADOS -->
-                <div class="comentarios-lista">
-                    <h3>Comentarios (<?php echo count($comentarios); ?>)</h3>
-                    
-                    <?php if (!empty($comentarios)): ?>
-                        <?php foreach ($comentarios as $com): ?>
-                            <div class="comentario-item">
-                                <div class="comentario-header">
-                                    <strong><?php echo htmlspecialchars($com['nombre']); ?></strong>
-                                    <span class="comentario-fecha"><?php echo date('d/m/Y H:i', strtotime($com['fecha_creacion'])); ?></span>
-                                </div>
-                                <p class="comentario-texto"><?php echo nl2br(htmlspecialchars($com['comentario'])); ?></p>
-                            </div>
-                        <?php endforeach; ?>
-                    <?php else: ?>
-                        <p style="color: #999; text-align: center; padding: 2rem;">No hay comentarios aún. ¡Sé el primero en comentar!</p>
-                    <?php endif; ?>
-                </div>
-
-                <hr style="margin: 2.5rem 0; border: none; border-top: 1px solid #e2e8f0;">
-
-                <!-- FORMULARIO -->
-                <h2 style="margin-top: 2.5rem;">Deja tu Opinión</h2>
-                
-                <?php if (!empty($mensaje)): ?>
-                    <div class="mensaje-alerta" id="mensajeAlerta" style="background: <?php echo ($tipo_mensaje === 'success') ? '#d4edda' : '#f8d7da'; ?>; color: <?php echo ($tipo_mensaje === 'success') ? '#155724' : '#721c24'; ?>; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
-                        <?php echo htmlspecialchars($mensaje); ?>
-                    </div>
-                    <script>
-                        // Ocultar el mensaje después de 3 segundos
-                        setTimeout(function() {
-                            var alerta = document.getElementById('mensajeAlerta');
-                            if (alerta) {
-                                alerta.style.transition = 'opacity 0.5s ease';
-                                alerta.style.opacity = '0';
-                                setTimeout(function() {
-                                    alerta.style.display = 'none';
-                                }, 500);
-                            }
-                        }, 3000);
-                    </script>
-                <?php endif; ?>
-
-                <form method="POST" class="comentario-form">
-                    <div class="form-group">
-                        <label for="nombre">Tu Nombre:</label>
-                        <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="comentario">Tu Comentario:</label>
-                        <textarea id="comentario" name="comentario" rows="5" placeholder="Comparte tu opinión sobre el artículo..." required></textarea>
-                    </div>
-                    
-                    <button type="submit" class="btn-enviar">Enviar Comentario</button>
-                </form>
-            </section>
-
         <a href="index.php" class="btn-back">← Volver al inicio</a>
     </main>
 
@@ -182,6 +74,7 @@ if ($conn) {
                     <li><a href="tabla.php">Tabla de Posiciones</a></li>
                     <li><a href="destacado.php">Lo Destacado</a></li>
                     <li><a href="opinion.php">Opinión</a></li>
+                    <li><a href="sugerencias.php">Sugerencias</a></li>
                 </ul>
             </div>
             <div class="footer-section admin">
