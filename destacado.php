@@ -141,5 +141,18 @@ if (empty($noticias)) {
 
     <script src="assets/js/index.js"></script>
     <script src="assets/js/share.js"></script>
+    
+    <script>
+        // Mostrar error de login si existe
+        <?php 
+        if (isset($_SESSION['error'])) {
+            $error = $_SESSION['error'];
+            unset($_SESSION['error']);
+            echo "document.getElementById('mensajeLogin').className = 'mensaje-login error';";
+            echo "document.getElementById('mensajeLogin').textContent = '$error';";
+            echo "document.getElementById('loginModal').classList.add('show');";
+        }
+        ?>
+    </script>
 </body>
 </html>

@@ -91,13 +91,12 @@ if ($conn) {
     
     // Obtener últimas 3 noticias
     $noticias_recientes = [];
-   // LÍNEA 94 CORREGIDA:
 $resultado = $conn->query("SELECT id, titulo, autor_id, estado, fecha_actualizacion FROM noticias ORDER BY fecha_actualizacion DESC LIMIT 3");
     if ($resultado && $resultado->num_rows > 0) {
         while ($fila = $resultado->fetch_assoc()) {
             // Obtener nombre del autor
-            $usuario_id = (int)$fila['usuario_id'];
-            $res_autor = $conn->query("SELECT nombre FROM usuarios WHERE id = $usuario_id");
+            $autor_id = (int)$fila['autor_id'];
+            $res_autor = $conn->query("SELECT nombre FROM usuarios WHERE id = $autor_id");
             $autor = 'Desconocido';
             if ($res_autor && $res_autor->num_rows > 0) {
                 $row_autor = $res_autor->fetch_assoc();
