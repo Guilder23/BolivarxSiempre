@@ -43,7 +43,7 @@ if (empty($noticias)) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lo Destacado - Bolivar por siempre</title>
+    <title>Lo Ultimo - Bolivar por siempre</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/destacado.css">
 </head>
@@ -53,7 +53,7 @@ if (empty($noticias)) {
     <main class="page-container">
         <div class="page-header">
             <img src="assets/img/LoUltimo.jpeg" alt="Destacado">
-            <h1>Lo Destacado</h1>
+            <h1>Lo Ultimo</h1>
         </div>
 
         <div class="page-content">
