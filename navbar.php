@@ -17,10 +17,10 @@
         <li><a href="historia.php">Historia</a></li>
         <li><a href="tabla.php">Tabla</a></li>
         <?php if(estoy_autenticado()): ?>
-            <li><a href="admin/dashboard.php" style="color: #51cf66; font-weight: 600;">⚙️ Admin</a></li>
+            <li><a href="admin/dashboard.php" style="color: #51cf66; font-weight: 600;">Admin</a></li>
             <li><a href="includes/auth.php?logout=1">Salir</a></li>
         <?php else: ?>
-            <li><a href="#" class="btn-login" onclick="abrirModalLogin(event)" style="background: linear-gradient(135deg, #5a7bb7, #1e3a5f); color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-weight: 600;">Login</a></li>
+            <li><a href="#" class="btn-login" onclick="abrirModalLogin(event)" style="background: linear-gradient(135deg, #5a7bb7, #1e3a5f); color: white !important ; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-weight: 600; ">Login</a></li>
         <?php endif; ?>
     </ul>
 </nav>
@@ -109,12 +109,26 @@
         border-color: #5a7bb7;
         box-shadow: 0 0 0 3px rgba(90, 123, 183, 0.1);
     }
-
+     .btn-login{
+        text-decoration: none;
+        color: white !important;
+        font-weight: 600;
+        padding: 8px 16px;
+        border-radius: 6px;
+        background: linear-gradient(135deg, #5a7bb7, #1e3a5f);
+     }
+     .btn-login:hover{
+        background: linear-gradient(135deg, #1e3a5f, #5a7bb7) !important;
+     }
+     .btn-login:active{
+        transform: translateY(0);
+     }
+     
     .btn-login-submit {
         width: 100%;
         padding: 12px 20px;
         background: linear-gradient(135deg, #5a7bb7, #1e3a5f);
-        color: white;
+        color: white !important;
         border: none;
         border-radius: 8px;
         font-size: 1.05em;
@@ -126,6 +140,7 @@
 
     .btn-login-submit:hover {
         transform: translateY(-2px);
+        background: linear-gradient(135deg, #1e3a5f, #5a7bb7) !important;
         box-shadow: 0 8px 20px rgba(30, 58, 95, 0.3);
     }
 
