@@ -37,8 +37,13 @@ if ($conn) {
 <body>
     <?php include 'navbar.php'; ?>
 
-    <main class="section-content">
-        <h1>Tabla de Posiciones</h1>
+    <main class="page-container">
+        <div class="page-header">
+            <img src="assets/img/principal.png" alt="Tabla de Posiciones" class="page-header-image">
+            <h1>Tabla de Posiciones</h1>
+        </div>
+
+        <div class="section-content">
         <p style="text-align: center; font-size: 1.1rem; color: #718096; margin-bottom: 2rem;">Temporada 2025 - Liga Profesional Boliviana</p>
 
         <div class="standings-wrapper">
@@ -87,8 +92,9 @@ if ($conn) {
                 </tbody>
             </table>
         </div>
+        </div>
 
-        <a href="index.php" class="btn">← Volver al inicio</a>
+        <a href="index.php" class="btn-back">← Volver al inicio</a>
     </main>
 
     <footer class="footer">

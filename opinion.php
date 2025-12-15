@@ -1,53 +1,118 @@
 <?php
 // Incluir configuración
 require_once __DIR__ . '/config/database.php';
-?>
+
+// Obtener lista de opiniones publicadas
+$opiniones = [];
+
+if ($conn) {
+    $query = "SELECT * FROM opiniones WHERE estado = 'publicado' ORDER BY fecha_publicacion DESC";
+    $result = mysqli_query($conn, $query);
+    
+    if ($result) {
+        while ($row = mysqli_fetch_assoc($result)) {
+            $opiniones[] = $row;
+        }
+    }
+} else {
+    // Datos de ejemplo si no hay conexión a BD
+    $opiniones = [
+        ['id' => 1, 'titulo' => 'Mi Opinión sobre el Club', 'contenido' => 'Esta es una opinión de ejemplo sobre el Club Bolívar...', 'imagen' => 'principal.png', 'fecha_publicacion' => date('Y-m-d H:i:s')],
+    ];
+}
 ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Opinión - Bolivar por siempre</title>
+    <title>Opiniones - Bolivar por siempre</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/opinion.css">
 </head>
 <body>
     <?php include 'navbar.php'; ?>
 
-    <main class="page-container">
+    <!-- Portada Opiniones -->
+    <div class="page-container">
         <div class="page-header">
-            <img src="assets/img/LaOpinion.jpeg" alt="Opinión">
+            <img src="assets/img/LaOpinion.jpeg" alt="Opinión" class="page-header-image">
             <h1>Opinión</h1>
         </div>
 
-        <div class="page-content" style="text-align: justify;" >
-            <article class="opinion-article">
-                <h2>Victoria Contando los Minutos</h2>
+        <main class="section-content">
+            <h2 style="text-align: center; color: #1e3a5f; margin: 3rem 0 2rem; font-size: 2rem;">Opiniones Recientes</h2>
 
-                <div style="text-align: right; font-size: 14px; color: #555; margin-bottom: 30px;">
-                  Por: <strong>Javier Ortuño</strong> | 9 de diciembre de 2025
+            <div class="opiniones-container">
+            <?php if (!empty($opiniones)): ?>
+                <div class="opiniones-grid">
+                    <?php foreach ($opiniones as $opinion): ?>
+                        <article class="opinion-card">
+                            <?php if (!empty($opinion['imagen'])): ?>
+                                <img src="assets/img/opiniones/<?php echo htmlspecialchars($opinion['imagen']); ?>" alt="<?php echo htmlspecialchars($opinion['titulo']); ?>" class="opinion-image">
+                            <?php else: ?>
+                                <img src="assets/img/principal.png" alt="Imagen por defecto" class="opinion-image">
+                            <?php endif; ?>
+                            <div class="opinion-content">
+                                <h2><?php echo htmlspecialchars($opinion['titulo']); ?></h2>
+                                <p class="opinion-date"><?php echo date('d/m/Y H:i', strtotime($opinion['fecha_publicacion'])); ?></p>
+                                <p class="opinion-text">
+                                    <?php 
+                                    $texto = substr($opinion['contenido'], 0, 200);
+                                    echo nl2br(htmlspecialchars($texto));
+                                    if (strlen($opinion['contenido']) > 200) echo '...';
+                                    ?>
+                                </p>
+                                <a href="#" class="btn-leer-mas" data-id="<?php echo $opinion['id']; ?>">Leer más →</a>
+                            </div>
+                        </article>
+                    <?php endforeach; ?>
                 </div>
+            <?php else: ?>
+                <div class="no-content">
+                    <p>No hay opiniones publicadas en este momento.</p>
+                </div>
+            <?php endif; ?>
+            </div>
+        </main>
 
-                <p>
-                    Fueron diez minutos largos. Independiente buscaba el empate mientras nuestro equipo parecía estar con las piernas gastadas. El final se hizo esperar, pero celebramos otro triunfo de visitante, esta vez en la Capital.
-                </p>
-                <p>
-                    En el momento clave, cuando debíamos asegurar la victoria con un hombre más en cancha, llegó la expulsión de Echeverría —no por culpa suya, sino por errores de Torrén y Freitas— y nuevamente apareció ese afán desconcertante de jugar hacia atrás.
-                </p>
-                <p>
-                    Otra vez vimos salidas inexplicables como las de Romero, mientras Cauteruccio quedaba como adorno adelante y no marcaba. El ingreso tardío de Ervin Vaca —uno de los mejores en los últimos cinco cotejos—, un Cataño desmotivado… detalles que sumaron nervios al cierre.
-                </p>
-                <p>
-                    Aun así, llegó la victoria. Empujamos todos para que el reloj avanzara y para que Independiente tropezara en casa. Los puntos hoy valen oro: dos horas más tarde Tigre perdió ante Always y aseguramos el segundo puesto. El título, sin embargo, sigue lejos, porque Guabirá vendrá con equipo suplente ante la banda roja.
-                </p>
-                <p>
-                    El partido empezó con un gol al minuto, oportuno Cauteruccio que hizo el tanto y nada más. En ese primer cuarto de hora pudimos marcar dos más, pero poco a poco nos enfriamos mientras el rival crecía alentado por su tribuna.
-                </p>
-                <p>
-                    Llegó el empate de Independiente, las llegadas constantes, la lentitud exasperante de Lampe, Torrén y Echeverría, los errores de José Sagredo, el nerviosismo de Freitas y el cansancio de Justiniano. La pregunta surgía una y otra vez: ¿por qué no juega Ervin Vaca?
-                </p>
-                <p>
+        <div class="volver-inicio">
+            <a href="index.php" class="btn-volver">← Volver al inicio</a>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section about">
+                <h3>Bolivar por siempre</h3>
+                <p>Institución deportiva referente del país con una historia rica en éxitos y tradición.</p>
+            </div>
+            <div class="footer-section links">
+                <h3>Enlaces</h3>
+                <ul>
+                    <li><a href="index.php">Inicio</a></li>
+                    <li><a href="opinion.php">Opiniones</a></li>
+                    <li><a href="historia.php">Historia</a></li>
+                    <li><a href="tabla.php">Tabla de Posiciones</a></li>
+                </ul>
+            </div>
+            <div class="footer-section social">
+                <h3>Síguenos</h3>
+                <div class="social-links">
+                    <a href="#" target="_blank">Facebook</a>
+                    <a href="#" target="_blank">Twitter</a>
+                    <a href="#" target="_blank">Instagram</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Bolivar por siempre - Todos los derechos reservados</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/opinion.js"></script>
+</body>
+</html>
                     El gol del triunfo fue mérito total de Dorny Romero: el que pierde goles cantados pero concreta los más difíciles. Con 1,73 de estatura, les gana en el salto a rivales de 1,80. Así llegó su gol, superando primero a su marcador y luego al portero.
                 </p>
                 <p>

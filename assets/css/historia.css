@@ -1,5 +1,5 @@
 /* ============================================================
-   CSS MODERNO Y PROFESIONAL PARA HISTORIA.PHP
+   CSS PARA HISTORIA - ESTILO CONSISTENTE CON NOTICIAS Y OPINIONES
    ============================================================ */
 
 :root {
@@ -25,29 +25,285 @@
 body {
     font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: var(--text-color);
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    background: linear-gradient(135deg, #e3ecf7 0%, #b3d1f7 100%);
     line-height: 1.8;
     min-height: 100vh;
 }
 
-.section-content {
-    max-width: 900px;
-    margin: 120px auto 0;
-    padding: 0 2rem;
+/* ===== PAGE HEADER (PORTADA) ===== */
+.page-container {
+    width: 100%;
 }
 
-/* ===== HEADER HERO ===== */
-.section-content h1 {
+.page-header {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    margin-top: 80px;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding: 3rem;
+}
+
+.page-header-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.page-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(30, 58, 95, 0.6), rgba(90, 123, 183, 0.5));
+    z-index: 1;
+}
+
+.page-header h1 {
+    position: relative;
+    z-index: 2;
     font-size: 3.5rem;
     font-weight: 700;
-    color: var(--primary-color);
-    margin: 3rem 0 1rem;
-    letter-spacing: -0.5px;
-    text-align: center;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    letter-spacing: -1px;
+    margin: 0;
 }
 
-.section-content > h2:first-of-type {
-    font-size: 2rem;
+/* ===== SECCIÓN DE CONTENIDO ===== */
+.section-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem 4rem;
+}
+
+/* ===== CONTENEDOR DE HISTORIAS ===== */
+.historias-container {
+    width: 100%;
+}
+
+.historias-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+/* ===== TARJETAS DE HISTORIA ===== */
+.historia-card {
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(30, 58, 95, 0.1);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.historia-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 32px rgba(30, 58, 95, 0.2);
+}
+
+.historia-image {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.historia-card:hover .historia-image {
+    transform: scale(1.05);
+}
+
+.historia-content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.historia-content h2 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+}
+
+.historia-date {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.historia-text {
+    color: var(--text-color);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    flex-grow: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.btn-leer-mas {
+    display: inline-block;
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    align-self: flex-start;
+    padding: 0.5rem 0;
+    border-bottom: 2px solid transparent;
+}
+
+.btn-leer-mas:hover {
+    color: var(--primary-color);
+    border-bottom-color: var(--secondary-color);
+}
+
+/* ===== SIN CONTENIDO ===== */
+.no-content {
+    text-align: center;
+    padding: 4rem 2rem;
+    color: var(--text-light);
+    font-size: 1.1rem;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 15px;
+    margin: 2rem 0;
+}
+
+/* ===== BOTONES ===== */
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.8rem;
+    background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin-top: 2rem;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(90, 123, 183, 0.3);
+}
+
+/* ===== FOOTER ===== */
+.footer {
+    background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: #fff;
+    margin-top: 4rem;
+    padding: 3rem 2rem 1rem;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-section h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.footer-section p,
+.footer-section ul {
+    font-size: 0.95rem;
+    line-height: 1.8;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #fff;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    margin: 2rem 0;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.social-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.footer-bottom p {
+    margin-top: 0.5rem;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .page-header {
+        height: 250px;
+    }
+
+    .page-header h1 {
+        font-size: 2rem;
+    }
+
+    .historias-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+}
     color: var(--secondary-color);
     text-align: center;
     margin-bottom: 2rem;

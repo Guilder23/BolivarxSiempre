@@ -58,6 +58,38 @@ CREATE TABLE IF NOT EXISTS comentarios (
   INDEX idx_fecha (fecha_creacion)
 );
 
+-- ===== TABLA DE OPINIONES =====
+CREATE TABLE IF NOT EXISTS opiniones (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  titulo VARCHAR(255) NOT NULL,
+  contenido LONGTEXT NOT NULL,
+  autor_id INT NOT NULL,
+  imagen VARCHAR(255),
+  estado ENUM('publicado', 'borrador', 'cancelado') DEFAULT 'borrador',
+  fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  fecha_actualizacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  fecha_publicacion DATETIME NULL,
+  FOREIGN KEY (autor_id) REFERENCES usuarios(id) ON DELETE CASCADE,
+  INDEX idx_estado (estado),
+  INDEX idx_fecha (fecha_creacion)
+);
+
+-- ===== TABLA DE HISTORIA =====
+CREATE TABLE IF NOT EXISTS historia (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  titulo VARCHAR(255) NOT NULL,
+  contenido LONGTEXT NOT NULL,
+  autor_id INT NOT NULL,
+  imagen VARCHAR(255),
+  estado ENUM('publicado', 'borrador', 'cancelado') DEFAULT 'borrador',
+  fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  fecha_actualizacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  fecha_publicacion DATETIME NULL,
+  FOREIGN KEY (autor_id) REFERENCES usuarios(id) ON DELETE CASCADE,
+  INDEX idx_estado (estado),
+  INDEX idx_fecha (fecha_creacion)
+);
+
 -- ===== INSERTAR USUARIO ADMINISTRADOR POR DEFECTO =====
 -- Usuario: admin
 -- Contraseña: admin123 (hasheada con password_hash BCrypt)

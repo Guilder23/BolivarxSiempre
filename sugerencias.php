@@ -56,18 +56,19 @@ if ($conn) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sugerencias - Bolivar por siempre</title>
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/opinion.css">
+    <link rel="stylesheet" href="assets/css/sugerencias.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <?php include 'navbar.php'; ?>
 
     <main class="page-container">
         <div class="page-header">
-            <img src="assets/img/LaOpinion.jpeg" alt="Sugerencias">
+            <img src="assets/img/LaOpinion.jpeg" alt="Sugerencias" class="page-header-image">
             <h1>Buzón de Sugerencias</h1>
         </div>
 
-        <div class="page-content" style="text-align: justify;">
+        <div class="section-content">
             <!-- SECCIÓN DE SUGERENCIAS -->
             <section class="comentarios-section">
                 <h2>¿Qué nos sugieres?</h2>

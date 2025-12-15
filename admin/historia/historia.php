@@ -5,8 +5,8 @@ require_once '../../includes/auth.php';
 requerir_admin();
 
 // ===== FUNCIONES DE UTILIDAD =====
-function procesar_imagen_noticia($file) {
-    $carpeta_uploads = '../../assets/img/noticias/';
+function procesar_imagen_historia($file) {
+    $carpeta_uploads = '../../assets/img/historia/';
     
     // Crear carpeta si no existe
     if (!is_dir($carpeta_uploads)) {
@@ -34,7 +34,7 @@ function procesar_imagen_noticia($file) {
     
     // Generar nombre único
     $ext = pathinfo($file['name'], PATHINFO_EXTENSION);
-    $nombre_archivo = 'noticia_' . time() . '_' . rand(1000, 9999) . '.' . $ext;
+    $nombre_archivo = 'historia_' . time() . '_' . rand(1000, 9999) . '.' . $ext;
     $ruta_completa = $carpeta_uploads . $nombre_archivo;
     
     // Mover archivo
@@ -48,7 +48,7 @@ function procesar_imagen_noticia($file) {
 // Procesar acciones
 $accion = $_GET['accion'] ?? $_POST['accion'] ?? null;
 
-// CREAR NOTICIA
+// CREAR HISTORIA
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && $accion === 'crear') {
     $titulo = escapar($_POST['titulo'] ?? '');
     $contenido = escapar($_POST['contenido'] ?? '');
@@ -62,20 +62,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $accion === 'crear') {
             // Procesar imagen
             $imagen = null;
             if (isset($_FILES['imagen']) && $_FILES['imagen']['error'] !== UPLOAD_ERR_NO_FILE) {
-                $imagen = procesar_imagen_noticia($_FILES['imagen']);
+                $imagen = procesar_imagen_historia($_FILES['imagen']);
             }
             
             $imagen_valor = $imagen ? "'$imagen'" : 'NULL';
             $fecha_publicacion = ($estado === 'publicado') ? date('Y-m-d H:i:s') : NULL;
             
-            $consulta = "INSERT INTO noticias (titulo, contenido, autor_id, imagen, estado, fecha_publicacion) 
+            $consulta = "INSERT INTO historia (titulo, contenido, autor_id, imagen, estado, fecha_publicacion) 
                          VALUES ('$titulo', '$contenido', $usuario_id, $imagen_valor, '$estado', " . ($fecha_publicacion ? "'$fecha_publicacion'" : "NULL") . ")";
             
             if ($conn && $conn->query($consulta)) {
-                $respuesta = ['exito' => true, 'mensaje' => 'Noticia creada exitosamente'];
+                $respuesta = ['exito' => true, 'mensaje' => 'Historia creada exitosamente'];
             } else {
                 $error_msg = $conn ? $conn->error : 'No hay conexión a la base de datos';
-                $respuesta = ['exito' => false, 'mensaje' => 'Error al crear la noticia: ' . $error_msg];
+                $respuesta = ['exito' => false, 'mensaje' => 'Error al crear la historia: ' . $error_msg];
             }
         } catch (Exception $e) {
             $respuesta = ['exito' => false, 'mensaje' => 'Error: ' . $e->getMessage()];
@@ -87,13 +87,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $accion === 'crear') {
     exit();
 }
 
-// OBTENER NOTICIA PARA EDITAR/VER
+// OBTENER HISTORIA PARA EDITAR/VER
 if ($accion && in_array($accion, ['editar', 'ver']) && isset($_GET['id'])) {
     $id = (int)$_GET['id'];
-    $resultado = $conn->query("SELECT * FROM noticias WHERE id = $id LIMIT 1");
+    $resultado = $conn->query("SELECT h.*, u.nombre as autor FROM historia h 
+                               LEFT JOIN usuarios u ON h.autor_id = u.id 
+                               WHERE h.id = $id LIMIT 1");
     
     if ($resultado && $resultado->num_rows > 0) {
-        $noticia = $resultado->fetch_assoc();
+        $historia = $resultado->fetch_assoc();
         
         if (isset($_SERVER['HTTP_X_REQUESTED_WITH'])) {
             // Es AJAX, devolver el formulario
@@ -103,7 +105,7 @@ if ($accion && in_array($accion, ['editar', 'ver']) && isset($_GET['id'])) {
     exit();
 }
 
-// ACTUALIZAR NOTICIA
+// ACTUALIZAR HISTORIA
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && $accion === 'editar') {
     $id = (int)$_POST['id'];
     $titulo = escapar($_POST['titulo'] ?? '');
@@ -114,20 +116,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $accion === 'editar') {
         $respuesta = ['exito' => false, 'mensaje' => 'Todos los campos son requeridos'];
     } else {
         try {
-            // Obtener datos actuales de la noticia
-            $resultado_actual = $conn->query("SELECT imagen FROM noticias WHERE id = $id LIMIT 1");
-            $noticia_actual = $resultado_actual->fetch_assoc();
-            $imagen = $noticia_actual['imagen']; // Mantener imagen actual por defecto
+            // Obtener datos actuales de la historia
+            $resultado_actual = $conn->query("SELECT imagen FROM historia WHERE id = $id LIMIT 1");
+            $historia_actual = $resultado_actual->fetch_assoc();
+            $imagen = $historia_actual['imagen']; // Mantener imagen actual por defecto
             
             // Procesar imagen si se subió una nueva
             if (isset($_FILES['imagen']) && $_FILES['imagen']['error'] !== UPLOAD_ERR_NO_FILE) {
-                $imagen = procesar_imagen_noticia($_FILES['imagen']);
+                $imagen = procesar_imagen_historia($_FILES['imagen']);
             }
             
             $fecha_publicacion = ($estado === 'publicado') ? date('Y-m-d H:i:s') : NULL;
             $imagen_valor = $imagen ? "'$imagen'" : 'NULL';
             
-            $consulta = "UPDATE noticias SET 
+            $consulta = "UPDATE historia SET 
                          titulo = '$titulo',
                          contenido = '$contenido',
                          imagen = $imagen_valor,
@@ -137,7 +139,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $accion === 'editar') {
                          WHERE id = $id";
             
             if ($conn && $conn->query($consulta)) {
-                $respuesta = ['exito' => true, 'mensaje' => 'Noticia actualizada exitosamente'];
+                $respuesta = ['exito' => true, 'mensaje' => 'Historia actualizada exitosamente'];
             } else {
                 $error_msg = $conn ? $conn->error : 'No hay conexión a la base de datos';
                 $respuesta = ['exito' => false, 'mensaje' => 'Error al actualizar: ' . $error_msg];
@@ -152,61 +154,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $accion === 'editar') {
     exit();
 }
 
-// OBTENER TABLA ACTUALIZADA (PARA AJAX)
-if ($accion === 'obtener_tabla') {
-    // OBTENER TODAS LAS NOTICIAS
-    $noticias = [];
-    $resultado = $conn->query("SELECT n.*, u.nombre FROM noticias n JOIN usuarios u ON n.autor_id = u.id ORDER BY n.fecha_creacion DESC");
-
-    if ($resultado) {
-        while ($fila = $resultado->fetch_assoc()) {
-            $noticias[] = $fila;
+// ELIMINAR HISTORIA
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && $accion === 'eliminar') {
+    $id = (int)$_POST['id'];
+    
+    // Obtener imagen para eliminarla
+    $resultado = $conn->query("SELECT imagen FROM historia WHERE id = $id LIMIT 1");
+    if ($resultado && $resultado->num_rows > 0) {
+        $historia = $resultado->fetch_assoc();
+        if ($historia['imagen']) {
+            $archivo = '../../assets/img/historia/' . $historia['imagen'];
+            if (file_exists($archivo)) {
+                unlink($archivo);
+            }
         }
     }
     
-    // Generar HTML de la tabla
-    ?>
-    <thead>
-        <tr>
-            <th>Título</th>
-            <th>Autor</th>
-            <th>Estado</th>
-            <th>Fecha</th>
-            <th>Acciones</th>
-        </tr>
-    </thead>
-    <tbody>
-        <?php if (!empty($noticias)): ?>
-            <?php foreach ($noticias as $noticia): ?>
-                <tr>
-                    <td><?php echo htmlspecialchars(substr($noticia['titulo'], 0, 40)); ?></td>
-                    <td><?php echo htmlspecialchars($noticia['nombre']); ?></td>
-                    <td><span class="badge badge-<?php echo $noticia['estado']; ?>"><?php echo ucfirst($noticia['estado']); ?></span></td>
-                    <td><?php echo date('d/m/Y H:i', strtotime($noticia['fecha_creacion'])); ?></td>
-                    <td>
-                        <button class="btn-action btn-primary" onclick="abrirModalAdmin('modalVerNoticia', 'ver', <?php echo $noticia['id']; ?>)">Ver</button>
-                        <button class="btn-action btn-primary" onclick="abrirModalAdmin('modalEditarNoticia', 'editar', <?php echo $noticia['id']; ?>)">✏️ Editar</button>
-                        <button class="btn-action btn-danger" onclick="abrirModalConfirmacion('eliminar_noticia', <?php echo $noticia['id']; ?>, '<?php echo htmlspecialchars($noticia['titulo']); ?>')">🗑️ Eliminar</button>
-                    </td>
-                </tr>
-            <?php endforeach; ?>
-        <?php else: ?>
-            <tr>
-                <td colspan="5" class="text-center">No hay noticias registradas</td>
-            </tr>
-        <?php endif; ?>
-    </tbody>
-    <?php
-    exit();
-}
-
-// ELIMINAR NOTICIA
-if ($accion === 'eliminar' && (isset($_GET['id']) || isset($_POST['id']))) {
-    $id = (int)($_GET['id'] ?? $_POST['id']);
-    $consulta = "DELETE FROM noticias WHERE id = $id";
+    $consulta = "DELETE FROM historia WHERE id = $id";
     
     if ($conn && $conn->query($consulta)) {
-        $respuesta = ['exito' => true, 'mensaje' => 'Noticia eliminada exitosamente'];
+        $respuesta = ['exito' => true, 'mensaje' => 'Historia eliminada exitosamente'];
     } else {
         $error_msg = $conn ? $conn->error : 'No hay conexión a la base de datos';
         $respuesta = ['exito' => false, 'mensaje' => 'Error al eliminar: ' . $error_msg];
@@ -217,13 +184,50 @@ if ($accion === 'eliminar' && (isset($_GET['id']) || isset($_POST['id']))) {
     exit();
 }
 
-// OBTENER TODAS LAS NOTICIAS
-$noticias = [];
-$resultado = $conn->query("SELECT n.*, u.nombre FROM noticias n JOIN usuarios u ON n.autor_id = u.id ORDER BY n.fecha_creacion DESC");
+// OBTENER TABLA DE HISTORIAS
+if ($accion === 'obtener_tabla') {
+    // OBTENER TODAS LAS HISTORIAS
+    $historias = [];
+    $resultado = $conn->query("SELECT h.*, u.nombre FROM historia h JOIN usuarios u ON h.autor_id = u.id ORDER BY h.fecha_creacion DESC");
+
+    if ($resultado) {
+        while ($fila = $resultado->fetch_assoc()) {
+            $historias[] = $fila;
+        }
+    }
+    
+    // Generar HTML de la tabla (sin encabezados)
+    ?>
+    <?php if (!empty($historias)): ?>
+        <?php foreach ($historias as $historia): ?>
+            <tr>
+                <td><?php echo htmlspecialchars(substr($historia['titulo'], 0, 40)); ?></td>
+                <td><?php echo htmlspecialchars($historia['nombre']); ?></td>
+                <td><span class="badge badge-<?php echo $historia['estado']; ?>"><?php echo ucfirst($historia['estado']); ?></span></td>
+                <td><?php echo date('d/m/Y H:i', strtotime($historia['fecha_creacion'])); ?></td>
+                <td>
+                    <button class="btn-action btn-secondary" onclick="abrirModalAdmin('modalVerHistoria', 'ver', <?php echo $historia['id']; ?>)">Ver</button>
+                    <button class="btn-action btn-primary" onclick="abrirModalAdmin('modalEditarHistoria', 'editar', <?php echo $historia['id']; ?>)">Editar</button>
+                    <button class="btn-action btn-danger" onclick="abrirModalConfirmacion('eliminar_historia', <?php echo $historia['id']; ?>, '<?php echo htmlspecialchars($historia['titulo']); ?>')">Eliminar</button>
+                </td>
+            </tr>
+        <?php endforeach; ?>
+    <?php else: ?>
+        <tr>
+            <td colspan="5" class="text-center">No hay historias registradas</td>
+        </tr>
+    <?php endif; ?>
+    <?php
+    exit();
+}
+
+// OBTENER TODAS LAS HISTORIAS
+$historias = [];
+$resultado = $conn->query("SELECT h.*, u.nombre FROM historia h JOIN usuarios u ON h.autor_id = u.id ORDER BY h.fecha_creacion DESC");
 
 if ($resultado) {
     while ($fila = $resultado->fetch_assoc()) {
-        $noticias[] = $fila;
+        $historias[] = $fila;
     }
 }
 
@@ -234,7 +238,7 @@ $usuario = obtener_usuario_actual();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestionar Noticias - Bolivar por siempre</title>
+    <title>Gestionar Historia - Bolivar por siempre</title>
     <link rel="stylesheet" href="../../assets/css/style.css">
     <link rel="stylesheet" href="../../assets/css/admin/dashboard.css">
     <link rel="stylesheet" href="../../assets/css/admin/noticias.css">
@@ -249,9 +253,9 @@ $usuario = obtener_usuario_actual();
             <nav class="sidebar-nav">
                 <ul>
                     <li><a href="../dashboard.php">Dashboard</a></li>
-                    <li><a href="noticias.php" class="active">Gestionar Noticias</a></li>
+                    <li><a href="../noticias/noticias.php">Gestionar Noticias</a></li>
                     <li><a href="../opiniones/opiniones.php">Gestionar Opiniones</a></li>
-                    <li><a href="../historia/historia.php">Gestionar Historia</a></li>
+                    <li><a href="historia.php" class="active">Gestionar Historia</a></li>
                     <li><a href="../tabla_posiciones/tabla_posiciones.php">Gestionar Posiciones</a></li>
                     <li class="divider"></li>
                     <li><a href="../../?logout=1" class="logout">Cerrar Sesión</a></li>
@@ -263,7 +267,7 @@ $usuario = obtener_usuario_actual();
         <main class="admin-content">
             <!-- TOP BAR -->
             <div class="admin-topbar">
-                <h1>Gestionar Noticias</h1>
+                <h1>Gestionar Historia</h1>
                 <div class="user-info">
                     <span><?php echo htmlspecialchars($usuario['nombre']); ?></span>
                     <small><?php echo ucfirst($usuario['rol']); ?></small>
@@ -273,60 +277,54 @@ $usuario = obtener_usuario_actual();
             <!-- CONTENIDO -->
             <div class="admin-body">
                 <div class="noticias-header">
-                    <button class="btn-primary" onclick="abrirModalAdmin('modalCrearNoticia', 'crear')">
-                        Crear Nueva Noticia
+                    <button class="btn-primary" onclick="abrirModalAdmin('modalCrearHistoria', 'crear')">
+                        Crear Nueva Historia
                     </button>
                 </div>
 
-                <!-- TABLA DE NOTICIAS -->
-                <div class="table-container">
-                    <table class="admin-table">
-                        <thead>
-                            <tr>
-                                <th>Título</th>
-                                <th>Autor</th>
-                                <th>Estado</th>
-                                <th>Fecha</th>
-                                <th>Acciones</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php if (!empty($noticias)): ?>
-                                <?php foreach ($noticias as $noticia): ?>
-                                    <tr>
-                                        <td><?php echo htmlspecialchars(substr($noticia['titulo'], 0, 40)); ?></td>
-                                        <td><?php echo htmlspecialchars($noticia['nombre']); ?></td>
-                                        <td>
-                                            <span class="estado-badge estado-<?php echo $noticia['estado']; ?>">
-                                                <?php echo ucfirst($noticia['estado']); ?>
-                                            </span>
-                                        </td>
-                                        <td><?php echo date('d/m/Y H:i', strtotime($noticia['fecha_creacion'])); ?></td>
-                                        <td class="acciones">
-                                            <button class="btn-action btn-secondary" onclick="abrirModalAdmin('modalVerNoticia', 'ver', <?php echo $noticia['id']; ?>)">Ver</button>
-                                            <button class="btn-action btn-primary" onclick="abrirModalAdmin('modalEditarNoticia', 'editar', <?php echo $noticia['id']; ?>)">Editar</button>
-                                            <button class="btn-action btn-danger" onclick="abrirModalConfirmacion('eliminar_noticia', <?php echo $noticia['id']; ?>, '<?php echo htmlspecialchars($noticia['titulo']); ?>')">Eliminar</button>
-                                        </td>
-                                    </tr>
-                                <?php endforeach; ?>
-                            <?php else: ?>
+                <!-- TABLA DE HISTORIAS -->
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>Título</th>
+                            <th>Autor</th>
+                            <th>Estado</th>
+                            <th>Fecha</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabla-historias">
+                        <?php if (!empty($historias)): ?>
+                            <?php foreach ($historias as $historia): ?>
                                 <tr>
-                                    <td colspan="5" class="text-center">No hay noticias registradas</td>
+                                    <td><?php echo htmlspecialchars(substr($historia['titulo'], 0, 40)); ?></td>
+                                    <td><?php echo htmlspecialchars($historia['nombre']); ?></td>
+                                    <td><span class="badge badge-<?php echo $historia['estado']; ?>"><?php echo ucfirst($historia['estado']); ?></span></td>
+                                    <td><?php echo date('d/m/Y H:i', strtotime($historia['fecha_creacion'])); ?></td>
+                                    <td>
+                                        <button class="btn-action btn-primary" onclick="abrirModalAdmin('modalVerHistoria', 'ver', <?php echo $historia['id']; ?>)">Ver</button>
+                                        <button class="btn-action btn-primary" onclick="abrirModalAdmin('modalEditarHistoria', 'editar', <?php echo $historia['id']; ?>)">✏️ Editar</button>
+                                        <button class="btn-action btn-danger" onclick="abrirModalConfirmacion('eliminar_historia', <?php echo $historia['id']; ?>, '<?php echo htmlspecialchars($historia['titulo']); ?>')">🗑️ Eliminar</button>
+                                    </td>
                                 </tr>
-                            <?php endif; ?>
-                        </tbody>
-                    </table>
-                </div>
+                            <?php endforeach; ?>
+                        <?php else: ?>
+                            <tr>
+                                <td colspan="5" class="text-center">No hay historias registradas</td>
+                            </tr>
+                        <?php endif; ?>
+                    </tbody>
+                </table>
             </div>
         </main>
     </div>
 
-    <!-- MODAL CREAR NOTICIA -->
-    <div id="modalCrearNoticia" class="modal">
+    <!-- MODALES -->
+    <div id="modalCrearHistoria" class="modal">
         <div class="modal-content modal-lg">
-            <span class="close-modal" onclick="cerrarModalAdmin('modalCrearNoticia')">&times;</span>
-            <h2>Crear Nueva Noticia</h2>
-            <form id="formCrearNoticia" method="POST" action="noticias.php" class="admin-form" enctype="multipart/form-data" onsubmit="event.preventDefault(); enviarFormularioAdmin(this, recargarTablaNoticias);">
+            <span class="close-modal" onclick="cerrarModalAdmin('modalCrearHistoria')">&times;</span>
+            <h2>Crear Nueva Historia</h2>
+            <form id="formCrearHistoria" method="POST" action="historia.php" class="admin-form" enctype="multipart/form-data" onsubmit="event.preventDefault(); enviarFormularioAdmin(this, recargarTablaHistorias);">
                 <input type="hidden" name="accion" value="crear">
                 
                 <div class="form-group">
@@ -342,48 +340,44 @@ $usuario = obtener_usuario_actual();
                 <div class="form-group">
                     <label for="imagen">Imagen:</label>
                     <div class="preview-container">
-                        <div id="imagenPreviewCrear" class="imagen-preview-placeholder">Vista previa</div>
+                        <div id="preview-crear" class="imagen-preview-placeholder">Vista previa</div>
                     </div>
-                    <input type="file" id="imagen" name="imagen" accept="image/*" onchange="previewImagen(event)">
+                    <input type="file" id="imagen" name="imagen" accept="image/*" onchange="previewImage(event)">
                     <small style="color: #718096;">Formatos aceptados: JPG, PNG, GIF. Tamaño máximo: 5MB</small>
                 </div>
 
                 <div class="form-group">
                     <label for="estado">Estado:</label>
-                    <select id="estado" name="estado" required>
+                    <select id="estado" name="estado">
                         <option value="borrador">Borrador</option>
                         <option value="publicado">Publicado</option>
-                        <option value="cancelado">Cancelado</option>
                     </select>
                 </div>
 
-                <button type="submit" class="btn-primary">Guardar Noticia</button>
+                <button type="submit" class="btn-primary">Crear Historia</button>
             </form>
         </div>
     </div>
 
-    <!-- MODAL VER NOTICIA -->
-    <div id="modalVerNoticia" class="modal">
+    <div id="modalVerHistoria" class="modal">
         <div class="modal-content modal-lg">
-            <span class="close-modal" onclick="cerrarModalAdmin('modalVerNoticia')">&times;</span>
+            <span class="close-modal" onclick="cerrarModalAdmin('modalVerHistoria')">&times;</span>
             <div class="modal-body">
                 <!-- Se cargará vía AJAX -->
             </div>
         </div>
     </div>
 
-    <!-- MODAL EDITAR NOTICIA -->
-    <div id="modalEditarNoticia" class="modal">
+    <div id="modalEditarHistoria" class="modal">
         <div class="modal-content modal-lg">
-            <span class="close-modal" onclick="cerrarModalAdmin('modalEditarNoticia')">&times;</span>
-            <h2>Editar Noticia</h2>
+            <span class="close-modal" onclick="cerrarModalAdmin('modalEditarHistoria')">&times;</span>
+            <h2>Editar Historia</h2>
             <div class="modal-body">
                 <!-- Se cargará vía AJAX -->
             </div>
         </div>
     </div>
 
-    <!-- MODAL CONFIRMACIÓN ELIMINACIÓN -->
     <div id="modalConfirmacion" class="modal">
         <div class="modal-content modal-confirm">
             <h2 id="confirmTitulo">Confirmar Eliminación</h2>
@@ -395,8 +389,8 @@ $usuario = obtener_usuario_actual();
         </div>
     </div>
 
+
     <script src="../../assets/js/admin/admin.js"></script>
-    <script src="../../assets/js/admin/noticias.js"></script>
     <script>
         // ===== FUNCIONES DE CONFIRMACIÓN Y RECARGA =====
         function abrirModalConfirmacion(tipo, id, titulo) {
@@ -413,18 +407,18 @@ $usuario = obtener_usuario_actual();
             
             // Agregar nuevo evento
             btnConfirmar.onclick = function() {
-                eliminarNoticia(id);
+                eliminarHistoria(id);
             };
             
             abrirModalAdmin('modalConfirmacion');
         }
 
-        function eliminarNoticia(id) {
+        function eliminarHistoria(id) {
             const formData = new FormData();
             formData.append('accion', 'eliminar');
             formData.append('id', id);
 
-            fetch('noticias.php', {
+            fetch('historia.php', {
                 method: 'POST',
                 body: formData
             })
@@ -433,26 +427,26 @@ $usuario = obtener_usuario_actual();
                     if (data.exito) {
                         mostrarAlertaAdmin('success', data.mensaje);
                         cerrarModalAdmin('modalConfirmacion');
-                        setTimeout(recargarTablaNoticias, 1500);
+                        setTimeout(recargarTablaHistorias, 1500);
                     } else {
                         mostrarAlertaAdmin('error', data.mensaje);
                     }
                 })
                 .catch(error => {
                     console.error('Error:', error);
-                    mostrarAlertaAdmin('error', 'Error al eliminar la noticia');
+                    mostrarAlertaAdmin('error', 'Error al eliminar la historia');
                 });
         }
 
-        function recargarTablaNoticias() {
+        function recargarTablaHistorias() {
             fetch('?accion=obtener_tabla')
                 .then(response => response.text())
                 .then(html => {
-                    const tabla = document.querySelector('.admin-table');
+                    const tabla = document.querySelector('tbody');
                     if (tabla) {
                         tabla.innerHTML = html;
                     }
-                    cerrarModalAdmin('modalCrearNoticia');
+                    cerrarModalAdmin('modalCrearHistoria');
                 })
                 .catch(error => {
                     console.error('Error:', error);
@@ -461,9 +455,9 @@ $usuario = obtener_usuario_actual();
         }
 
         // ===== VISTA PREVIA DE IMAGEN =====
-        function previewImagen(event) {
+        function previewImage(event) {
             const file = event.target.files[0];
-            const previewDiv = document.getElementById('imagenPreviewCrear');
+            const previewDiv = document.getElementById('preview-crear');
             
             if (file) {
                 const reader = new FileReader();
@@ -472,13 +466,13 @@ $usuario = obtener_usuario_actual();
                 };
                 reader.readAsDataURL(file);
             } else {
-                previewDiv.innerHTML = '<div class="imagen-preview-placeholder">Vista previa</div>';
+                previewDiv.innerHTML = '';
             }
         }
 
-        function previewImagenEditar(event) {
+        function previewImageEditar(event) {
             const file = event.target.files[0];
-            const previewDiv = document.getElementById('imagenPreview');
+            const previewDiv = document.getElementById('preview-editar');
             
             if (file) {
                 const reader = new FileReader();
@@ -489,5 +483,6 @@ $usuario = obtener_usuario_actual();
             }
         }
     </script>
+    </div>
 </body>
 </html>

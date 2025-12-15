@@ -1,6 +1,8 @@
 <?php
 // Incluir configuración
-require_once '../config/database.php';
+$base_path = dirname(dirname(__FILE__));
+require_once $base_path . '/config/database.php';
+require_once $base_path . '/includes/auth.php';
 
 // Verificar que sea admin
 requerir_admin();
@@ -183,6 +185,8 @@ $resultado = $conn->query("SELECT id, titulo, autor_id, estado, fecha_actualizac
                 <ul>
                     <li><a href="dashboard.php" class="active">Dashboard</a></li>
                     <li><a href="noticias/noticias.php">Gestionar Noticias</a></li>
+                    <li><a href="opiniones/opiniones.php">Gestionar Opiniones</a></li>
+                    <li><a href="historia/historia.php">Gestionar Historia</a></li>
                     <li><a href="tabla_posiciones/tabla_posiciones.php">Gestionar Posiciones</a></li>
                     <li class="divider"></li>
                     <li><a href="../includes/auth.php?logout=1" class="logout">Cerrar Sesión</a></li>

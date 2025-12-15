@@ -148,6 +148,8 @@ $usuario = obtener_usuario_actual();
                 <ul>
                     <li><a href="../dashboard.php">Dashboard</a></li>
                     <li><a href="../noticias/noticias.php">Gestionar Noticias</a></li>
+                    <li><a href="../opiniones/opiniones.php">Gestionar Opiniones</a></li>
+                    <li><a href="../historia/historia.php">Gestionar Historia</a></li>
                     <li><a href="tabla_posiciones.php" class="active">Gestionar Posiciones</a></li>
                     <li class="divider"></li>
                     <li><a href="../../?logout=1" class="logout">Cerrar Sesión</a></li>
