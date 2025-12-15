@@ -301,8 +301,8 @@ $usuario = obtener_usuario_actual();
                                     <td><?php echo date('d/m/Y H:i', strtotime($opinion['fecha_creacion'])); ?></td>
                                     <td>
                                         <button class="btn-action btn-primary" onclick="abrirModalAdmin('modalVerOpinion', 'ver', <?php echo $opinion['id']; ?>)">Ver</button>
-                                        <button class="btn-action btn-primary" onclick="abrirModalAdmin('modalEditarOpinion', 'editar', <?php echo $opinion['id']; ?>)">✏️ Editar</button>
-                                        <button class="btn-action btn-danger" onclick="abrirModalConfirmacion('eliminar_opinion', <?php echo $opinion['id']; ?>, '<?php echo htmlspecialchars($opinion['titulo']); ?>')">🗑️ Eliminar</button>
+                                        <button class="btn-action btn-primary" onclick="abrirModalAdmin('modalEditarOpinion', 'editar', <?php echo $opinion['id']; ?>)">Editar</button>
+                                        <button class="btn-action btn-danger" onclick="abrirModalConfirmacion('eliminar_opinion', <?php echo $opinion['id']; ?>, '<?php echo htmlspecialchars($opinion['titulo']); ?>')">Eliminar</button>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>

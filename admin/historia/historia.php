@@ -303,8 +303,8 @@ $usuario = obtener_usuario_actual();
                                     <td><?php echo date('d/m/Y H:i', strtotime($historia['fecha_creacion'])); ?></td>
                                     <td>
                                         <button class="btn-action btn-primary" onclick="abrirModalAdmin('modalVerHistoria', 'ver', <?php echo $historia['id']; ?>)">Ver</button>
-                                        <button class="btn-action btn-primary" onclick="abrirModalAdmin('modalEditarHistoria', 'editar', <?php echo $historia['id']; ?>)">✏️ Editar</button>
-                                        <button class="btn-action btn-danger" onclick="abrirModalConfirmacion('eliminar_historia', <?php echo $historia['id']; ?>, '<?php echo htmlspecialchars($historia['titulo']); ?>')">🗑️ Eliminar</button>
+                                        <button class="btn-action btn-primary" onclick="abrirModalAdmin('modalEditarHistoria', 'editar', <?php echo $historia['id']; ?>)">Editar</button>
+                                        <button class="btn-action btn-danger" onclick="abrirModalConfirmacion('eliminar_historia', <?php echo $historia['id']; ?>, '<?php echo htmlspecialchars($historia['titulo']); ?>')">Eliminar</button>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>

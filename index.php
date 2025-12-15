@@ -180,19 +180,7 @@ if (!$ultima_historia) {
                 </div>
             </div>
 
-            <!-- Card Lo Último/Sugerencias -->
-            <div class="card-main card-3 card-with-image" id="sugerencias">
-                <div class="card-header-image">
-                    <img src="assets/img/LoUltimo.jpeg" alt="Sugerencias">
-                </div>
-                <div class="card-content">
-                    <span class="card-title">BUZÓN DE SUGERENCIAS</span>
-                    <p class="card-desc">¿Tienes ideas para mejorar el equipo? Aquí puedes compartir tus sugerencias y propuestas. Tu opinión es importante para que el equipo y la institución continúen mejorando.</p>
-                    <a href="sugerencias.php" class="card-btn">Ver más</a>
-                </div>
-            </div>
-
-            <!-- Card Historia -->
+                        <!-- Card Historia -->
             <div class="card-main card-4 card-with-image" id="historia">
                 <div class="card-header-image">
                     <?php 
@@ -215,6 +203,18 @@ if (!$ultima_historia) {
                     </p>
                     <p class="card-desc"><?php echo htmlspecialchars($ultima_historia['contenido']); ?></p>
                     <a href="historia.php" class="card-btn">Ver más</a>
+                </div>
+            </div>
+            
+            <!-- Card Lo Último/Sugerencias -->
+            <div class="card-main card-3 card-with-image" id="sugerencias">
+                <div class="card-header-image">
+                    <img src="assets/img/LoUltimo.jpeg" alt="Sugerencias">
+                </div>
+                <div class="card-content">
+                    <span class="card-title">BUZÓN DE SUGERENCIAS</span>
+                    <p class="card-desc">¿Tienes ideas para mejorar el equipo? Aquí puedes compartir tus sugerencias y propuestas. Tu opinión es importante para que el equipo y la institución continúen mejorando.</p>
+                    <a href="sugerencias.php" class="card-btn">Ver más</a>
                 </div>
             </div>
 
