@@ -205,20 +205,8 @@ if (!$ultima_historia) {
                     <a href="historia.php" class="card-btn">Ver más</a>
                 </div>
             </div>
-            
-            <!-- Card Lo Último/Sugerencias -->
-            <div class="card-main card-3 card-with-image" id="sugerencias">
-                <div class="card-header-image">
-                    <img src="assets/img/LoUltimo.jpeg" alt="Sugerencias">
-                </div>
-                <div class="card-content">
-                    <span class="card-title">BUZÓN DE SUGERENCIAS</span>
-                    <p class="card-desc">¿Tienes ideas para mejorar el equipo? Aquí puedes compartir tus sugerencias y propuestas. Tu opinión es importante para que el equipo y la institución continúen mejorando.</p>
-                    <a href="sugerencias.php" class="card-btn">Ver más</a>
-                </div>
-            </div>
 
-            <!-- Tabla de Posiciones -->
+                     <!-- Tabla de Posiciones -->
             <div class="card-main card-6" id="tabla">
                 <span class="card-title">TABLA DE POSICIONES</span>
                 <table class="tabla-posiciones">
@@ -248,6 +236,18 @@ if (!$ultima_historia) {
                     </tbody>
                 </table>
                 <a href="tabla.php" class="card-btn" style="margin-top: 15px;">Ver más</a>
+            </div>
+            
+            <!-- Card Lo Último/Sugerencias -->
+            <div class="card-main card-3 card-with-image" id="sugerencias">
+                <div class="card-header-image">
+                    <img src="assets/img/LoUltimo.jpeg" alt="Sugerencias">
+                </div>
+                <div class="card-content">
+                    <span class="card-title">BUZÓN DE SUGERENCIAS</span>
+                    <p class="card-desc">¿Tienes ideas para mejorar el equipo? Aquí puedes compartir tus sugerencias y propuestas. Tu opinión es importante para que el equipo y la institución continúen mejorando.</p>
+                    <a href="sugerencias.php" class="card-btn">Ver más</a>
+                </div>
             </div>
         </section>
     </main>
