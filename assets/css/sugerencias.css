@@ -1,0 +1,246 @@
+/* ============================================================
+   CSS PARA SUGERENCIAS.PHP
+   ============================================================ */
+
+:root {
+    --primary-color: #1e3a5f;
+    --secondary-color: #5a7bb7;
+    --accent-color: #b3d1f7;
+    --light-bg: #f0f4f8;
+    --text-color: #2d3748;
+    --text-light: #718096;
+    --border-color: #e2e8f0;
+    --success-color: #48bb78;
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 10px 28px rgba(0, 0, 0, 0.12);
+}
+
+/* ===== SECCIÓN DE SUGERENCIAS ===== */
+.comentarios-section {
+    background: #fff;
+    border-radius: 16px;
+    padding: 2.5rem;
+    margin: 2rem 0;
+    box-shadow: var(--shadow-lg);
+}
+
+.comentarios-section h2 {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.comentarios-section h3 {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 2px solid var(--accent-color);
+}
+
+/* ===== LISTA DE SUGERENCIAS ===== */
+.comentarios-lista {
+    margin: 2rem 0;
+}
+
+.comentario-item {
+    background: linear-gradient(135deg, #f8fafc 0%, #edf2f7 100%);
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    border-left: 4px solid var(--secondary-color);
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-sm);
+}
+
+.comentario-item:hover {
+    transform: translateX(5px);
+    box-shadow: var(--shadow-md);
+    border-left-color: var(--primary-color);
+}
+
+.comentario-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.8rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.comentario-header strong {
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.comentario-header strong::before {
+    content: '👤';
+    font-size: 1rem;
+}
+
+.comentario-fecha {
+    color: var(--text-light);
+    font-size: 0.85rem;
+    background: rgba(90, 123, 183, 0.1);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.comentario-fecha::before {
+    content: '';
+    font-size: 0.8rem;
+}
+
+.comentario-texto {
+    color: var(--text-color);
+    line-height: 1.7;
+    margin: 0;
+    font-size: 1rem;
+    padding: 0.5rem 0;
+    border-top: 1px dashed var(--border-color);
+    margin-top: 0.5rem;
+    padding-top: 1rem;
+}
+
+/* ===== FORMULARIO DE SUGERENCIAS ===== */
+.comentario-form {
+    background: linear-gradient(135deg, #f8fafc 0%, #edf2f7 100%);
+    padding: 2rem;
+    border-radius: 12px;
+    margin-top: 1.5rem;
+    border: 1px solid var(--border-color);
+}
+
+.comentario-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.comentario-form label {
+    display: block;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.comentario-form input,
+.comentario-form textarea {
+    width: 100%;
+    padding: 0.9rem 1rem;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: #fff;
+}
+
+.comentario-form input:focus,
+.comentario-form textarea:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 3px rgba(90, 123, 183, 0.15);
+}
+
+.comentario-form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.btn-enviar {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: #fff;
+    padding: 1rem 2.5rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-md);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn-enviar::before {
+    content: '';
+}
+
+.btn-enviar:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+}
+
+.btn-enviar:active {
+    transform: translateY(0);
+}
+
+/* ===== MENSAJE DE ALERTA ===== */
+.mensaje-alerta {
+    border-radius: 8px;
+    border-left: 4px solid;
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .comentarios-section {
+        padding: 1.5rem;
+        margin: 1rem 0;
+    }
+
+    .comentarios-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .comentario-item {
+        padding: 1.2rem;
+    }
+
+    .comentario-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .comentario-form {
+        padding: 1.5rem;
+    }
+
+    .btn-enviar {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .comentarios-section {
+        padding: 1rem;
+    }
+
+    .comentario-form input,
+    .comentario-form textarea {
+        padding: 0.8rem;
+    }
+}
