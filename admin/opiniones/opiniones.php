@@ -90,7 +90,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $accion === 'crear') {
 // OBTENER OPINIÓN PARA EDITAR/VER
 if ($accion && in_array($accion, ['editar', 'ver']) && isset($_GET['id'])) {
     $id = (int)$_GET['id'];
-    $resultado = $conn->query("SELECT * FROM opiniones WHERE id = $id LIMIT 1");
+    $resultado = $conn->query("SELECT o.*, u.nombre as autor FROM opiniones o LEFT JOIN usuarios u ON o.autor_id = u.id WHERE o.id = $id LIMIT 1");
     
     if ($resultado && $resultado->num_rows > 0) {
         $opinion = $resultado->fetch_assoc();
