@@ -90,7 +90,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $accion === 'crear') {
 // OBTENER NOTICIA PARA EDITAR/VER
 if ($accion && in_array($accion, ['editar', 'ver']) && isset($_GET['id'])) {
     $id = (int)$_GET['id'];
-    $resultado = $conn->query("SELECT * FROM noticias WHERE id = $id LIMIT 1");
+    $resultado = $conn->query("SELECT n.*, u.nombre as autor FROM noticias n LEFT JOIN usuarios u ON n.autor_id = u.id WHERE n.id = $id LIMIT 1");
     
     if ($resultado && $resultado->num_rows > 0) {
         $noticia = $resultado->fetch_assoc();
