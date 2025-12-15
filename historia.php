@@ -27,58 +27,57 @@ if ($conn) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Historia - Bolívar por siempre</title>
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/historia.css">
+    <link rel="stylesheet" href="assets/css/destacado.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <?php include 'navbar.php'; ?>
 
     <!-- Portada Historia -->
-    <div class="page-container">
+    <main class="page-container">
         <div class="page-header">
-            <img src="assets/img/historia.jpg" alt="Historia" class="page-header-image">
+            <img src="assets/img/LaHistoria.jpeg" alt="Historia">
             <h1>Historia</h1>
         </div>
 
-        <main class="section-content">
-            <h2 style="text-align: center; color: #1e3a5f; margin: 3rem 0 2rem; font-size: 2rem;">Historias Recientes</h2>
-            <div class="historias-container">
+        <div class="page-content">
+            <section class="content-section">
+                <div class="section-header">
+                    <h2>Historias del Club</h2>
+                    <div class="header-line"></div>
+                </div>
+                
                 <?php if (!empty($historias)): ?>
-                    <div class="historias-grid">
-                        <?php foreach ($historias as $historia): ?>
-                            <article class="historia-card">
-                                <?php if (!empty($historia['imagen'])): ?>
-                                    <img src="assets/img/historia/<?php echo htmlspecialchars($historia['imagen']); ?>" alt="<?php echo htmlspecialchars($historia['titulo']); ?>" class="historia-image">
-                                <?php else: ?>
-                                    <img src="assets/img/principal.png" alt="Imagen por defecto" class="historia-image">
-                                <?php endif; ?>
-                                <div class="historia-content">
-                                    <h2><?php echo htmlspecialchars($historia['titulo']); ?></h2>
-                                    <p class="historia-date"><?php echo date('d/m/Y H:i', strtotime($historia['fecha_publicacion'])); ?></p>
-                                    <p class="historia-text">
-                                        <?php 
-                                        $texto = substr($historia['contenido'], 0, 200);
-                                        echo nl2br(htmlspecialchars($texto));
-                                        if (strlen($historia['contenido']) > 200) echo '...';
-                                        ?>
-                                    </p>
-                                    <a href="#" class="btn-leer-mas" data-id="<?php echo $historia['id']; ?>">Leer más →</a>
-                                </div>
-                            </article>
-                        <?php endforeach; ?>
-                    </div>
+                    <?php foreach ($historias as $historia): ?>
+                        <article class="featured-card">
+                            <?php 
+                            if (!empty($historia['imagen'])) {
+                                $imagen_url = 'assets/img/historia/' . htmlspecialchars($historia['imagen']);
+                                echo '<img src="' . $imagen_url . '" alt="' . htmlspecialchars($historia['titulo']) . '">';
+                            } else {
+                                echo '<img src="assets/img/historia.jpg" alt="Historia">';
+                            }
+                            ?>
+                            <div class="featured-card-content">
+                                <h3><?php echo htmlspecialchars($historia['titulo']); ?></h3>
+                                <p class="author">Publicado el <?php 
+                                    $fecha = strtotime($historia['fecha_publicacion']);
+                                    $meses = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
+                                    $mes = $meses[date('n', $fecha) - 1];
+                                    echo date('d', $fecha) . ' de ' . $mes . ' de ' . date('Y', $fecha);
+                                ?><?php if (!empty($historia['autor_nombre'])): ?> por <?php echo htmlspecialchars($historia['autor_nombre']); ?><?php endif; ?></p>
+                                <p><?php echo nl2br(htmlspecialchars($historia['contenido'])); ?></p>
+                            </div>
+                        </article>
+                    <?php endforeach; ?>
                 <?php else: ?>
-                    <div class="no-content">
-                        <p>No hay historias publicadas en este momento.</p>
-                    </div>
+                    <p style="text-align: center; color: #999; padding: 2rem;">No hay historias publicadas en este momento.</p>
                 <?php endif; ?>
-            </div>
-        </main>
-
-        <div class="volver-inicio">
-            <a href="index.php" class="btn-volver">← Volver al inicio</a>
+            </section>
         </div>
-    </div>
+
+        <a href="index.php" class="btn-back">← Volver al inicio</a>
+    </main>
 
     <footer class="footer">
         <div class="footer-container">
