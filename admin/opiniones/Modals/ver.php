@@ -2,7 +2,7 @@
     <h2><?php echo htmlspecialchars($opinion['titulo']); ?></h2>
     
     <?php if ($opinion['imagen']): ?>
-        <img src="/assets/img/opiniones/<?php echo htmlspecialchars($opinion['imagen']); ?>" alt="<?php echo htmlspecialchars($opinion['titulo']); ?>" class="modal-image">
+        <img src="../../assets/img/opiniones/<?php echo htmlspecialchars($opinion['imagen']); ?>" alt="<?php echo htmlspecialchars($opinion['titulo']); ?>" class="modal-image">
     <?php endif; ?>
     
     <div class="modal-info">

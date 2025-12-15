@@ -2,7 +2,7 @@
     <h2><?php echo htmlspecialchars($historia['titulo']); ?></h2>
     
     <?php if ($historia['imagen']): ?>
-        <img src="/assets/img/historia/<?php echo htmlspecialchars($historia['imagen']); ?>" alt="<?php echo htmlspecialchars($historia['titulo']); ?>" class="modal-image">
+        <img src="../../assets/img/historia/<?php echo htmlspecialchars($historia['imagen']); ?>" alt="<?php echo htmlspecialchars($historia['titulo']); ?>" class="modal-image">
     <?php endif; ?>
     
     <div class="modal-info">
