@@ -5,6 +5,8 @@ require_once __DIR__ . '/config/database.php';
 // Obtener últimas 3 equipos publicados o datos de ejemplo
 $tabla_posiciones = [];
 $ultima_noticia = null;
+$ultima_opinion = null;
+$ultima_historia = null;
 
 if ($conn) {
     // Obtener últimos 3 equipos publicados ordenados por puntos
@@ -34,6 +36,30 @@ if ($conn) {
             'fecha' => date('d/m/Y', strtotime($noticia['fecha_actualizacion']))
         ];
     }
+    
+    // Obtener última opinión publicada
+    $resultado = $conn->query("SELECT titulo, contenido, imagen, fecha_publicacion FROM opiniones WHERE estado = 'publicado' ORDER BY fecha_publicacion DESC LIMIT 1");
+    if ($resultado && $resultado->num_rows > 0) {
+        $opinion = $resultado->fetch_assoc();
+        $ultima_opinion = [
+            'titulo' => $opinion['titulo'],
+            'contenido' => substr($opinion['contenido'], 0, 150) . '...',
+            'imagen' => $opinion['imagen'],
+            'fecha' => date('d/m/Y', strtotime($opinion['fecha_publicacion']))
+        ];
+    }
+    
+    // Obtener última historia publicada
+    $resultado = $conn->query("SELECT titulo, contenido, imagen, fecha_publicacion FROM historia WHERE estado = 'publicado' ORDER BY fecha_publicacion DESC LIMIT 1");
+    if ($resultado && $resultado->num_rows > 0) {
+        $historia = $resultado->fetch_assoc();
+        $ultima_historia = [
+            'titulo' => $historia['titulo'],
+            'contenido' => substr($historia['contenido'], 0, 150) . '...',
+            'imagen' => $historia['imagen'],
+            'fecha' => date('d/m/Y', strtotime($historia['fecha_publicacion']))
+        ];
+    }
 }
 
 // Datos de ejemplo si no hay BD o si está vacía
@@ -50,7 +76,25 @@ if (!$ultima_noticia) {
         'titulo' => 'Bienvenido a Bolivar por Siempre',
         'contenido' => 'Mantente informado con las últimas noticias, eventos y comunicados oficiales del Bolivar por siempre.',
         'imagen' => null,
-        'fecha' => '10/12/2025'
+        'fecha' => date('d/m/Y')
+    ];
+}
+
+if (!$ultima_opinion) {
+    $ultima_opinion = [
+        'titulo' => 'Opinión del Equipo',
+        'contenido' => 'Fueron 10 minutos largos, porque Independiente buscaba el empate y nuestro equipo parecía estar con las piernas gastadas. El final se hizo esperar...',
+        'imagen' => null,
+        'fecha' => date('d/m/Y')
+    ];
+}
+
+if (!$ultima_historia) {
+    $ultima_historia = [
+        'titulo' => 'Primera Estrella Celeste',
+        'contenido' => 'Ganarle a Litoral era una hazaña y nada menos por 3-0 en el partido definitorio. Era el 13 de mayo de 1951. Ambos concluyeron con 21 puntos...',
+        'imagen' => null,
+        'fecha' => date('d/m/Y')
     ];
 }
 ?>
@@ -113,12 +157,25 @@ if (!$ultima_noticia) {
             <!-- Card Opinión -->
             <div class="card-main card-2 card-with-image" id="opinion">
                 <div class="card-header-image">
-                    <img src="assets/img/LaOpinion.jpeg" alt="Opinión">
+                    <?php 
+                    /*
+                    if (!empty($ultima_opinion['imagen'])) {
+                        $imagen_url = 'assets/img/opiniones/' . htmlspecialchars($ultima_opinion['imagen']);
+                        echo '<img src="' . $imagen_url . '" alt="' . htmlspecialchars($ultima_opinion['titulo']) . '">';
+                    } else {
+                        echo '<img src="assets/img/LaOpinion.jpeg" alt="Opinión">';
+                    }
+                    */
+                    echo '<img src="assets/img/LaOpinion.jpeg" alt="Opinión">';
+                    ?>
                 </div>
                 <div class="card-content">
                     <span class="card-title">OPINIÓN</span>
-                    <p class="card-desc">
-                        Fueron 10 minutos largos, porque Independiente buscaba el empate y nuestro equipo parecía estar con las piernas gastadas. El final se hizo esperar y festejamos otro triunfo de visitante, esta vez en la Capital.</p>
+                    <p class="card-date" style="font-size: 0.85rem; color: #5a7bb7; margin-bottom: 0.5rem;"><?php echo $ultima_opinion['fecha']; ?></p>
+                    <p class="card-desc" style="text-transform: uppercase;">
+                        <strong><?php echo htmlspecialchars($ultima_opinion['titulo']); ?></strong>
+                    </p>
+                    <p class="card-desc"><?php echo htmlspecialchars($ultima_opinion['contenido']); ?></p>
                     <a href="opinion.php" class="card-btn">Ver más</a>
                 </div>
             </div>
@@ -138,11 +195,25 @@ if (!$ultima_noticia) {
             <!-- Card Historia -->
             <div class="card-main card-4 card-with-image" id="historia">
                 <div class="card-header-image">
-                    <img src="assets/img/LaHistoria.jpeg" alt="Historia">
+                    <?php 
+                    /*
+                    if (!empty($ultima_historia['imagen'])) {
+                        $imagen_url = 'assets/img/historia/' . htmlspecialchars($ultima_historia['imagen']);
+                        echo '<img src="' . $imagen_url . '" alt="' . htmlspecialchars($ultima_historia['titulo']) . '">';
+                    } else {
+                        echo '<img src="assets/img/LaHistoria.jpeg" alt="Historia">';
+                    }
+                    */
+                    echo '<img src="assets/img/LaHistoria.jpeg" alt="Historia">';
+                    ?>
                 </div>
                 <div class="card-content">
                     <span class="card-title">HISTORIA</span>
-                    <p class="card-desc">Ganarle a Litoral era una hazaña y nada menos por 3-0 en el partido definitorio. Era el 13 de mayo de 1951. Ambos concluyeron con 21 puntos, en un torneo que contaba con nueve equipos. Esa fue la primera estrella celeste en 1950.</p>
+                    <p class="card-date" style="font-size: 0.85rem; color: #5a7bb7; margin-bottom: 0.5rem;"><?php echo $ultima_historia['fecha']; ?></p>
+                    <p class="card-desc" style="text-transform: uppercase;">
+                        <strong><?php echo htmlspecialchars($ultima_historia['titulo']); ?></strong>
+                    </p>
+                    <p class="card-desc"><?php echo htmlspecialchars($ultima_historia['contenido']); ?></p>
                     <a href="historia.php" class="card-btn">Ver más</a>
                 </div>
             </div>
