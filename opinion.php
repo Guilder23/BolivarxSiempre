@@ -28,100 +28,52 @@ if ($conn) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Opiniones - Bolivar por siempre</title>
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/opinion.css">
+    <link rel="stylesheet" href="assets/css/destacado.css">
 </head>
 <body>
     <?php include 'navbar.php'; ?>
 
-    <!-- Portada Opiniones -->
-    <div class="page-container">
+    <main class="page-container">
         <div class="page-header">
             <img src="assets/img/LaOpinion.jpeg" alt="Opinión" class="page-header-image">
             <h1>Opinión</h1>
         </div>
 
-        <main class="section-content">
-            <h2 style="text-align: center; color: #1e3a5f; margin: 3rem 0 2rem; font-size: 2rem;">Opiniones Recientes</h2>
-
-            <div class="opiniones-container">
-            <?php if (!empty($opiniones)): ?>
-                <div class="opiniones-grid">
+        <div class="page-content">
+            <section class="content-section">
+                <div class="section-header">
+                    <h2>Opiniones Recientes</h2>
+                    <div class="header-line"></div>
+                </div>
+                
+                <?php if (!empty($opiniones)): ?>
                     <?php foreach ($opiniones as $opinion): ?>
-                        <article class="opinion-card">
-                            <?php if (!empty($opinion['imagen'])): ?>
-                                <img src="assets/img/opiniones/<?php echo htmlspecialchars($opinion['imagen']); ?>" alt="<?php echo htmlspecialchars($opinion['titulo']); ?>" class="opinion-image">
-                            <?php else: ?>
-                                <img src="assets/img/principal.png" alt="Imagen por defecto" class="opinion-image">
-                            <?php endif; ?>
-                            <div class="opinion-content">
-                                <h2><?php echo htmlspecialchars($opinion['titulo']); ?></h2>
-                                <p class="opinion-date"><?php echo date('d/m/Y H:i', strtotime($opinion['fecha_publicacion'])); ?></p>
-                                <p class="opinion-text">
-                                    <?php 
-                                    $texto = substr($opinion['contenido'], 0, 200);
-                                    echo nl2br(htmlspecialchars($texto));
-                                    if (strlen($opinion['contenido']) > 200) echo '...';
-                                    ?>
-                                </p>
-                                <a href="#" class="btn-leer-mas" data-id="<?php echo $opinion['id']; ?>">Leer más →</a>
+                        <article class="featured-card">
+                            <?php 
+                            if (!empty($opinion['imagen'])) {
+                                $imagen_url = 'assets/img/opiniones/' . htmlspecialchars($opinion['imagen']);
+                                echo '<img src="' . $imagen_url . '" alt="' . htmlspecialchars($opinion['titulo']) . '">';
+                            } else {
+                                echo '<img src="assets/img/principal.png" alt="Opinión">';
+                            }
+                            ?>
+                            <div class="featured-card-content">
+                                <h3><?php echo htmlspecialchars($opinion['titulo']); ?></h3>
+                                <p class="author">Publicado el <?php 
+                                    $fecha = strtotime($opinion['fecha_publicacion']);
+                                    $meses = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
+                                    $mes = $meses[date('n', $fecha) - 1];
+                                    echo date('d', $fecha) . ' de ' . $mes . ' de ' . date('Y', $fecha);
+                                ?></p>
+                                <p><?php echo nl2br(htmlspecialchars($opinion['contenido'])); ?></p>
                             </div>
                         </article>
                     <?php endforeach; ?>
-                </div>
-            <?php else: ?>
-                <div class="no-content">
-                    <p>No hay opiniones publicadas en este momento.</p>
-                </div>
-            <?php endif; ?>
-            </div>
-        </main>
-
-        <div class="volver-inicio">
-            <a href="index.php" class="btn-volver">← Volver al inicio</a>
+                <?php else: ?>
+                    <p style="text-align: center; color: #999; padding: 2rem;">No hay opiniones publicadas en este momento.</p>
+                <?php endif; ?>
+            </section>
         </div>
-    </div>
-
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-section about">
-                <h3>Bolivar por siempre</h3>
-                <p>Institución deportiva referente del país con una historia rica en éxitos y tradición.</p>
-            </div>
-            <div class="footer-section links">
-                <h3>Enlaces</h3>
-                <ul>
-                    <li><a href="index.php">Inicio</a></li>
-                    <li><a href="opinion.php">Opiniones</a></li>
-                    <li><a href="historia.php">Historia</a></li>
-                    <li><a href="tabla.php">Tabla de Posiciones</a></li>
-                </ul>
-            </div>
-            <div class="footer-section social">
-                <h3>Síguenos</h3>
-                <div class="social-links">
-                    <a href="#" target="_blank">Facebook</a>
-                    <a href="#" target="_blank">Twitter</a>
-                    <a href="#" target="_blank">Instagram</a>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 Bolivar por siempre - Todos los derechos reservados</p>
-        </div>
-    </footer>
-
-    <script src="assets/js/opinion.js"></script>
-</body>
-</html>
-                    El gol del triunfo fue mérito total de Dorny Romero: el que pierde goles cantados pero concreta los más difíciles. Con 1,73 de estatura, les gana en el salto a rivales de 1,80. Así llegó su gol, superando primero a su marcador y luego al portero.
-                </p>
-                <p>
-                    Se ganó sufriendo. Los que ingresaron desde la banca no aportaron mucho, pero lo importante son los tres puntos, que hoy nos colocan segundos.
-                </p>
-                 <p>
-                    Desde Bolívar por Siempre seguimos apostando por más victorias. Estamos en racha, aunque a veces haya que sufrir.
-                </p>
-            </article>
 
         <a href="index.php" class="btn-back">← Volver al inicio</a>
     </main>

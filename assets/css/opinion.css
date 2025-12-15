@@ -65,6 +65,168 @@ body {
     border-radius: 2px;
 }
 
+/* ===== CONTENEDOR DE OPINIONES ===== */
+.opiniones-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.opiniones-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+    padding: 1rem 0;
+}
+
+/* ===== TARJETA DE OPINIÓN ===== */
+.opinion-card {
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--border-color);
+}
+
+.opinion-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(30, 58, 95, 0.15);
+}
+
+.opinion-image-wrapper {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    position: relative;
+}
+
+.opinion-card .opinion-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.opinion-card:hover .opinion-image {
+    transform: scale(1.05);
+}
+
+.opinion-image-wrapper::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+}
+
+.opinion-card .opinion-content {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.opinion-card .opinion-content h2 {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin-bottom: 0.8rem;
+    line-height: 1.4;
+    text-align: left;
+}
+
+.opinion-card .opinion-content h2::after {
+    display: none;
+}
+
+.opinion-card .opinion-date {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.opinion-card .opinion-date::before {
+    content: '📅';
+    font-size: 0.9rem;
+}
+
+.opinion-card .opinion-text {
+    color: var(--text-color);
+    line-height: 1.7;
+    font-size: 0.95rem;
+    flex-grow: 1;
+    margin-bottom: 1.5rem;
+}
+
+.btn-leer-mas {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    align-self: flex-start;
+    box-shadow: var(--shadow-sm);
+}
+
+.btn-leer-mas:hover {
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+    transform: translateX(5px);
+    box-shadow: var(--shadow-md);
+}
+
+/* ===== MENSAJE SIN CONTENIDO ===== */
+.no-content {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: var(--shadow-md);
+}
+
+.no-content p {
+    font-size: 1.2rem;
+    color: var(--text-light);
+}
+
+/* ===== BOTÓN VOLVER ===== */
+.volver-inicio {
+    text-align: center;
+    margin: 3rem 0;
+}
+
+.btn-volver {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: transparent;
+    color: var(--primary-color);
+    padding: 0.8rem 1.5rem;
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-volver:hover {
+    background: var(--primary-color);
+    color: #fff;
+    transform: translateX(-5px);
+}
+
 /* ===== OPINIONES COMENTARIOS ===== */
 .opinion-item {
     background: #fff;
@@ -219,6 +381,28 @@ body {
         font-size: 2.5rem;
     }
 
+    .opiniones-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 1rem 0;
+    }
+
+    .opinion-image-wrapper {
+        height: 180px;
+    }
+
+    .opinion-card .opinion-content {
+        padding: 1.2rem;
+    }
+
+    .opinion-card .opinion-content h2 {
+        font-size: 1.1rem;
+    }
+
+    .opiniones-container {
+        padding: 1rem 0.5rem;
+    }
+
     .opinion-form {
         padding: 1.5rem;
     }
@@ -226,6 +410,20 @@ body {
     .btn {
         padding: 0.8rem 1.5rem;
         font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .opiniones-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .opinion-image-wrapper {
+        height: 160px;
+    }
+
+    .section-content {
+        padding: 0 1rem;
     }
 }
 
