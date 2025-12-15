@@ -2,7 +2,12 @@
     <h2><?php echo htmlspecialchars($historia['titulo']); ?></h2>
     
     <?php if ($historia['imagen']): ?>
-        <img src="../../assets/img/historia/<?php echo htmlspecialchars($historia['imagen']); ?>" alt="<?php echo htmlspecialchars($historia['titulo']); ?>" class="modal-image">
+        <figure class="modal-figure">
+            <img src="../../assets/img/historia/<?php echo htmlspecialchars($historia['imagen']); ?>" alt="<?php echo htmlspecialchars($historia['titulo']); ?>" class="modal-image">
+            <?php if (!empty($historia['pie_foto'])): ?>
+                <figcaption class="pie-foto"><?php echo htmlspecialchars($historia['pie_foto']); ?></figcaption>
+            <?php endif; ?>
+        </figure>
     <?php endif; ?>
     
     <div class="modal-info">

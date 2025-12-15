@@ -2,7 +2,12 @@
     <h2><?php echo htmlspecialchars($opinion['titulo']); ?></h2>
     
     <?php if ($opinion['imagen']): ?>
-        <img src="../../assets/img/opiniones/<?php echo htmlspecialchars($opinion['imagen']); ?>" alt="<?php echo htmlspecialchars($opinion['titulo']); ?>" class="modal-image">
+        <figure class="modal-figure">
+            <img src="../../assets/img/opiniones/<?php echo htmlspecialchars($opinion['imagen']); ?>" alt="<?php echo htmlspecialchars($opinion['titulo']); ?>" class="modal-image">
+            <?php if (!empty($opinion['pie_foto'])): ?>
+                <figcaption class="pie-foto"><?php echo htmlspecialchars($opinion['pie_foto']); ?></figcaption>
+            <?php endif; ?>
+        </figure>
     <?php endif; ?>
     
     <div class="modal-info">

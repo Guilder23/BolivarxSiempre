@@ -2,7 +2,12 @@
     <h2><?php echo htmlspecialchars($noticia['titulo']); ?></h2>
     
     <?php if (!empty($noticia['imagen'])): ?>
-        <img src="../../assets/img/noticias/<?php echo htmlspecialchars($noticia['imagen']); ?>" alt="<?php echo htmlspecialchars($noticia['titulo']); ?>" class="modal-image">
+        <figure class="modal-figure">
+            <img src="../../assets/img/noticias/<?php echo htmlspecialchars($noticia['imagen']); ?>" alt="<?php echo htmlspecialchars($noticia['titulo']); ?>" class="modal-image">
+            <?php if (!empty($noticia['pie_foto'])): ?>
+                <figcaption class="pie-foto"><?php echo htmlspecialchars($noticia['pie_foto']); ?></figcaption>
+            <?php endif; ?>
+        </figure>
     <?php endif; ?>
     
     <div class="modal-info">

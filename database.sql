@@ -21,6 +21,7 @@ CREATE TABLE IF NOT EXISTS noticias (
   contenido LONGTEXT NOT NULL,
   autor_id INT NOT NULL,
   imagen VARCHAR(255),
+  pie_foto VARCHAR(255) DEFAULT NULL,
   estado ENUM('publicado', 'borrador', 'cancelado') DEFAULT 'borrador',
   fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   fecha_actualizacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
@@ -65,6 +66,7 @@ CREATE TABLE IF NOT EXISTS opiniones (
   contenido LONGTEXT NOT NULL,
   autor_id INT NOT NULL,
   imagen VARCHAR(255),
+  pie_foto VARCHAR(255) DEFAULT NULL,
   estado ENUM('publicado', 'borrador', 'cancelado') DEFAULT 'borrador',
   fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   fecha_actualizacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
@@ -81,6 +83,7 @@ CREATE TABLE IF NOT EXISTS historia (
   contenido LONGTEXT NOT NULL,
   autor_id INT NOT NULL,
   imagen VARCHAR(255),
+  pie_foto VARCHAR(255) DEFAULT NULL,
   estado ENUM('publicado', 'borrador', 'cancelado') DEFAULT 'borrador',
   fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   fecha_actualizacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
@@ -120,4 +123,10 @@ INSERT INTO noticias (titulo, contenido, autor_id, imagen, estado, fecha_publica
   'principal.png',
   'publicado',
   NOW()
+
+-- ===== ACTUALIZACIÓN: AGREGAR COLUMNA PIE_FOTO =====
+-- Ejecutar estas consultas si las tablas ya existen y necesitas agregar la columna:
+-- ALTER TABLE noticias ADD COLUMN pie_foto VARCHAR(255) DEFAULT NULL AFTER imagen;
+-- ALTER TABLE opiniones ADD COLUMN pie_foto VARCHAR(255) DEFAULT NULL AFTER imagen;
+-- ALTER TABLE historia ADD COLUMN pie_foto VARCHAR(255) DEFAULT NULL AFTER imagen;
 );

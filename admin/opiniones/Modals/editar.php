@@ -26,6 +26,11 @@
     </div>
 
     <div class="form-group">
+        <label for="pie_foto">Pie de foto:</label>
+        <input type="text" id="pie_foto" name="pie_foto" value="<?php echo htmlspecialchars($opinion['pie_foto'] ?? ''); ?>" placeholder="Ej: Autor de la imagen, créditos, descripción...">
+    </div>
+
+    <div class="form-group">
         <label for="estado">Estado:</label>
         <select id="estado" name="estado" required>
             <option value="borrador" <?php echo $opinion['estado'] === 'borrador' ? 'selected' : ''; ?>>Borrador</option>

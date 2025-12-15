@@ -53,6 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $accion === 'crear') {
     $titulo = escapar($_POST['titulo'] ?? '');
     $contenido = escapar($_POST['contenido'] ?? '');
     $estado = escapar($_POST['estado'] ?? 'borrador');
+    $pie_foto = escapar($_POST['pie_foto'] ?? '');
     $usuario_id = $_SESSION['usuario_id'];
     
     if (empty($titulo) || empty($contenido)) {
@@ -66,10 +67,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $accion === 'crear') {
             }
             
             $imagen_valor = $imagen ? "'$imagen'" : 'NULL';
+            $pie_foto_valor = !empty($pie_foto) ? "'$pie_foto'" : 'NULL';
             $fecha_publicacion = ($estado === 'publicado') ? date('Y-m-d H:i:s') : NULL;
             
-            $consulta = "INSERT INTO noticias (titulo, contenido, autor_id, imagen, estado, fecha_publicacion) 
-                         VALUES ('$titulo', '$contenido', $usuario_id, $imagen_valor, '$estado', " . ($fecha_publicacion ? "'$fecha_publicacion'" : "NULL") . ")";
+            $consulta = "INSERT INTO noticias (titulo, contenido, autor_id, imagen, pie_foto, estado, fecha_publicacion) 
+                         VALUES ('$titulo', '$contenido', $usuario_id, $imagen_valor, $pie_foto_valor, '$estado', " . ($fecha_publicacion ? "'$fecha_publicacion'" : "NULL") . ")";
             
             if ($conn && $conn->query($consulta)) {
                 $respuesta = ['exito' => true, 'mensaje' => 'Noticia creada exitosamente'];
@@ -109,6 +111,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $accion === 'editar') {
     $titulo = escapar($_POST['titulo'] ?? '');
     $contenido = escapar($_POST['contenido'] ?? '');
     $estado = escapar($_POST['estado'] ?? 'borrador');
+    $pie_foto = escapar($_POST['pie_foto'] ?? '');
     
     if (empty($titulo) || empty($contenido)) {
         $respuesta = ['exito' => false, 'mensaje' => 'Todos los campos son requeridos'];
@@ -126,11 +129,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $accion === 'editar') {
             
             $fecha_publicacion = ($estado === 'publicado') ? date('Y-m-d H:i:s') : NULL;
             $imagen_valor = $imagen ? "'$imagen'" : 'NULL';
+            $pie_foto_valor = !empty($pie_foto) ? "'$pie_foto'" : 'NULL';
             
             $consulta = "UPDATE noticias SET 
                          titulo = '$titulo',
                          contenido = '$contenido',
                          imagen = $imagen_valor,
+                         pie_foto = $pie_foto_valor,
                          estado = '$estado',
                          fecha_publicacion = " . ($fecha_publicacion ? "'$fecha_publicacion'" : "NULL") . ",
                          fecha_actualizacion = NOW()
@@ -346,6 +351,11 @@ $usuario = obtener_usuario_actual();
                     </div>
                     <input type="file" id="imagen" name="imagen" accept="image/*" onchange="previewImagen(event)">
                     <small style="color: #718096;">Formatos aceptados: JPG, PNG, GIF. Tamaño máximo: 5MB</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="pie_foto">Pie de foto:</label>
+                    <input type="text" id="pie_foto" name="pie_foto" placeholder="Ej: Autor de la imagen, créditos, descripción...">
                 </div>
 
                 <div class="form-group">
