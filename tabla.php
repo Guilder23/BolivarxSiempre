@@ -48,11 +48,11 @@ if ($conn) {
                         <th>Pos.</th>
                         <th>Equipo</th>
                         <th>PJ</th>
-                        <th>G</th>
-                        <th>E</th>
-                        <th>P</th>
-                        <th>GF</th>
-                        <th>GC</th>
+                        <th>PG</th>
+                        <th>PE</th>
+                        <th>PP</th>
+                        <!-- <th>GF</th> -->
+                        <!-- <th>GC</th> -->
                         <th>DG</th>
                         <th>Pts</th>
                         <th>Estado</th>
@@ -70,8 +70,8 @@ if ($conn) {
                         <td><?php echo $equipo['partidos_ganados']; ?></td>
                         <td><?php echo $equipo['partidos_empatados']; ?></td>
                         <td><?php echo $equipo['partidos_perdidos']; ?></td>
-                        <td><?php echo $equipo['goles_favor']; ?></td>
-                        <td><?php echo $equipo['goles_contra']; ?></td>
+                        <!-- <td><?php echo $equipo['goles_favor']; ?></td> -->
+                        <!-- <td><?php echo $equipo['goles_contra']; ?></td> -->
                         <td><?php echo ($equipo['diferencia_goles'] >= 0 ? '+' : '') . $equipo['diferencia_goles']; ?></td>
                         <td><strong><?php echo $equipo['puntos']; ?></strong></td>
                         <td>

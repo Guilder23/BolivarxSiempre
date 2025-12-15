@@ -155,9 +155,9 @@ if (!$ultima_noticia) {
                         <tr>
                             <th>Equipo</th>
                             <th>PJ</th>
-                            <th>G</th>
-                            <th>E</th>
-                            <th>P</th>
+                            <th>PG</th>
+                            <th>PE</th>
+                            <th>PP</th>
                             <th>DG</th>
                             <th>Puntos</th>
                         </tr>
