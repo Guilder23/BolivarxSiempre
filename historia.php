@@ -50,14 +50,19 @@ if ($conn) {
                 <?php if (!empty($historias)): ?>
                     <?php foreach ($historias as $historia): ?>
                         <article class="featured-card">
-                            <?php 
-                            if (!empty($historia['imagen'])) {
-                                $imagen_url = 'assets/img/historia/' . htmlspecialchars($historia['imagen']);
-                                echo '<img src="' . $imagen_url . '" alt="' . htmlspecialchars($historia['titulo']) . '">';
-                            } else {
-                                echo '<img src="assets/img/historia.jpg" alt="Historia">';
-                            }
-                            ?>
+                            <figure class="card-figure">
+                                <?php 
+                                if (!empty($historia['imagen'])) {
+                                    $imagen_url = 'assets/img/historia/' . htmlspecialchars($historia['imagen']);
+                                    echo '<img src="' . $imagen_url . '" alt="' . htmlspecialchars($historia['titulo']) . '">';
+                                } else {
+                                    echo '<img src="assets/img/historia.jpg" alt="Historia">';
+                                }
+                                ?>
+                                <?php if (!empty($historia['pie_foto'])): ?>
+                                    <figcaption class="pie-foto"><?php echo htmlspecialchars($historia['pie_foto']); ?></figcaption>
+                                <?php endif; ?>
+                            </figure>
                             <div class="featured-card-content">
                                 <h3><?php echo htmlspecialchars($historia['titulo']); ?></h3>
                                 <p class="author">Publicado el <?php 

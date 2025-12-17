@@ -49,14 +49,19 @@ if ($conn) {
                 <?php if (!empty($opiniones)): ?>
                     <?php foreach ($opiniones as $opinion): ?>
                         <article class="featured-card">
-                            <?php 
-                            if (!empty($opinion['imagen'])) {
-                                $imagen_url = 'assets/img/opiniones/' . htmlspecialchars($opinion['imagen']);
-                                echo '<img src="' . $imagen_url . '" alt="' . htmlspecialchars($opinion['titulo']) . '">';
-                            } else {
-                                echo '<img src="assets/img/principal.png" alt="Opinión">';
-                            }
-                            ?>
+                            <figure class="card-figure">
+                                <?php 
+                                if (!empty($opinion['imagen'])) {
+                                    $imagen_url = 'assets/img/opiniones/' . htmlspecialchars($opinion['imagen']);
+                                    echo '<img src="' . $imagen_url . '" alt="' . htmlspecialchars($opinion['titulo']) . '">';
+                                } else {
+                                    echo '<img src="assets/img/principal.png" alt="Opinión">';
+                                }
+                                ?>
+                                <?php if (!empty($opinion['pie_foto'])): ?>
+                                    <figcaption class="pie-foto"><?php echo htmlspecialchars($opinion['pie_foto']); ?></figcaption>
+                                <?php endif; ?>
+                            </figure>
                             <div class="featured-card-content">
                                 <h3><?php echo htmlspecialchars($opinion['titulo']); ?></h3>
                                 <p class="author">Publicado el <?php 

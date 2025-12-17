@@ -24,6 +24,7 @@ if (empty($noticias)) {
             'titulo' => 'Victoria Contando los Minutos',
             'contenido' => 'Fueron 10 minutos largos, porque Independiente buscaba el empate y nuestro equipo parecía estar con las piernas gastadas. El final se hizo esperar y festejamos otro triunfo de visitante, esta vez en la Capital. Una victoria que vale por dos, que nos acerca más al objetivo de la temporada. La defensa se mantuvo sólida ante el asedio rival, mientras que nuestro mediocampo controló los tiempos del juego de manera inteligente. Los delanteros, aunque tuvieron pocas oportunidades, las aprovecharon con eficiencia cuando fue necesario.',
             'imagen' => null,
+            'pie_foto' => null,
             'fecha_actualizacion' => '2025-12-09',
             'autor' => 'Administrador'
         ],
@@ -32,6 +33,7 @@ if (empty($noticias)) {
             'titulo' => 'Preparación para el Próximo Partido',
             'contenido' => 'El equipo continúa su preparación de cara al próximo enfrentamiento. Los entrenamientos han sido intensivos y el cuerpo técnico ha estado enfocado en mejorar aspectos defensivos y ofensivos que resultaron vulnerables en el último encuentro. La dirigencia confirmó que todos los jugadores se encuentran en óptimas condiciones físicas y mentales para afrontar los desafíos que vienen. Se espera un partido emocionante donde Bolivar por siempre buscará mantener su racha ganadora.',
             'imagen' => null,
+            'pie_foto' => null,
             'fecha_actualizacion' => '2025-12-08',
             'autor' => 'Administrador'
         ]
@@ -66,14 +68,19 @@ if (empty($noticias)) {
                 <?php if (!empty($noticias)): ?>
                     <?php foreach ($noticias as $noticia): ?>
                         <article class="featured-card">
-                            <?php 
-                            if (!empty($noticia['imagen'])) {
-                                $imagen_url = 'assets/img/noticias/' . htmlspecialchars($noticia['imagen']);
-                                echo '<img src="' . $imagen_url . '" alt="' . htmlspecialchars($noticia['titulo']) . '">';
-                            } else {
-                                echo '<img src="assets/img/gol.jpg" alt="Noticias">';
-                            }
-                            ?>
+                            <figure class="card-figure">
+                                <?php 
+                                if (!empty($noticia['imagen'])) {
+                                    $imagen_url = 'assets/img/noticias/' . htmlspecialchars($noticia['imagen']);
+                                    echo '<img src="' . $imagen_url . '" alt="' . htmlspecialchars($noticia['titulo']) . '">';
+                                } else {
+                                    echo '<img src="assets/img/gol.jpg" alt="Noticias">';
+                                }
+                                ?>
+                                <?php if (!empty($noticia['pie_foto'])): ?>
+                                    <figcaption class="pie-foto"><?php echo htmlspecialchars($noticia['pie_foto']); ?></figcaption>
+                                <?php endif; ?>
+                            </figure>
                             <div class="featured-card-content">
                                 <h3><?php echo htmlspecialchars($noticia['titulo']); ?></h3>
                                 <p class="author">Publicado el <?php 
