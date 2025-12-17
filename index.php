@@ -124,7 +124,7 @@ if (!$ultima_historia) {
         <section class="main-content">
             <!-- Imagen principal -->
             <div class="hero-image">
-                <img src="assets/img/principal.png" alt="Club Bolívar">
+                <img src="assets/img/Portada_BolivarXSiempre.jpg" alt="Club Bolívar">
             </div>
 
             <!-- Card Noticias Modificado-->
