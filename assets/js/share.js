@@ -23,6 +23,59 @@ function compartirPagina() {
     }
 }
 
+// Función para compartir en una app específica (Facebook, Instagram, TikTok)
+function compartirEnApp(app) {
+    const urlActual = window.location.href;
+    const titulo = document.title;
+    const texto = `🔵⚪ Bolivar por Siempre - Institución deportiva referente del país\n\n${urlActual}`;
+
+    // Configuración de URLs para cada app
+    const appConfig = {
+        facebook: {
+            webFallback: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(urlActual)}&quote=${encodeURIComponent(texto)}`,
+            nombre: 'Facebook'
+        },
+        instagram: {
+            webFallback: `https://www.instagram.com/`,
+            nombre: 'Instagram'
+        },
+        tiktok: {
+            webFallback: `https://www.tiktok.com/`,
+            nombre: 'TikTok'
+        }
+    };
+
+    const config = appConfig[app];
+    if (!config) return;
+
+    // Detectar si es móvil
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+    if (isMobile && navigator.share) {
+        // En móvil usar Web Share API - abre el selector de apps
+        navigator.share({
+            title: titulo,
+            text: texto,
+            url: urlActual
+        }).catch(err => {
+            console.log('Compartir cancelado o error:', err);
+        });
+    } else {
+        // En escritorio: copiar al portapapeles y abrir la red social
+        navigator.clipboard.writeText(texto).then(() => {
+            mostrarNotificacion(`✅ Enlace copiado. Pégalo en ${config.nombre} (Ctrl+V)`);
+            // Abrir la red social después de copiar
+            setTimeout(() => {
+                window.open(config.webFallback, '_blank');
+            }, 500);
+        }).catch(err => {
+            // Si falla el clipboard, solo abrir la red social
+            mostrarNotificacion(`Abriendo ${config.nombre}...`);
+            window.open(config.webFallback, '_blank');
+        });
+    }
+}
+
 // Función para mostrar notificación
 function mostrarNotificacion(mensaje) {
     const notificacion = document.createElement('div');

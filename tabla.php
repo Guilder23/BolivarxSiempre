@@ -113,22 +113,15 @@ if ($conn) {
                     <li><a href="sugerencias.php">Sugerencias</a></li>
                 </ul>
             </div>
-            <div class="footer-section admin">
-                <h3>Administración</h3>
-                <ul>
-                    <li><a href="admin/">Panel de Admin</a></li>
-                    <li><a href="config/logout.php">Cerrar Sesión</a></li>
-                </ul>
-            </div>
         </div>
         <div class="social-icons">
-            <a href="https://www.facebook.com/bolivarxsiempre" target="_blank" rel="noopener noreferrer" class="facebook" title="Síguenos en Facebook">
+            <a href="javascript:void(0);" onclick="compartirEnApp('facebook')" class="facebook" title="Compartir en Facebook">
                 <i class="fab fa-facebook-f"></i>
             </a>
-            <a href="https://www.instagram.com/bolivarxsiempre" target="_blank" rel="noopener noreferrer" class="instagram" title="Síguenos en Instagram">
+            <a href="javascript:void(0);" onclick="compartirEnApp('instagram')" class="instagram" title="Compartir en Instagram">
                 <i class="fab fa-instagram"></i>
             </a>
-            <a href="https://www.tiktok.com/@bolivarxsiempre" target="_blank" rel="noopener noreferrer" class="tiktok" title="Síguenos en TikTok">
+            <a href="javascript:void(0);" onclick="compartirEnApp('tiktok')" class="tiktok" title="Compartir en TikTok">
                 <i class="fab fa-tiktok"></i>
             </a>
             <a href="javascript:compartirPagina();" class="share-btn" title="Compartir esta página">
