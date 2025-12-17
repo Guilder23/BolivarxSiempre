@@ -74,7 +74,7 @@ if (empty($noticias)) {
                                     $imagen_url = 'assets/img/noticias/' . htmlspecialchars($noticia['imagen']);
                                     echo '<img src="' . $imagen_url . '" alt="' . htmlspecialchars($noticia['titulo']) . '">';
                                 } else {
-                                    echo '<img src="assets/img/gol.jpg" alt="Noticias">';
+                                    echo '<div class="sin-imagen"><i class="fas fa-image"></i><span>Sin imagen de noticia</span></div>';
                                 }
                                 ?>
                                 <?php if (!empty($noticia['pie_foto'])): ?>

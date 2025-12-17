@@ -55,7 +55,7 @@ if ($conn) {
                                     $imagen_url = 'assets/img/opiniones/' . htmlspecialchars($opinion['imagen']);
                                     echo '<img src="' . $imagen_url . '" alt="' . htmlspecialchars($opinion['titulo']) . '">';
                                 } else {
-                                    echo '<img src="assets/img/Portada_BolivarXSiempre.jpg" alt="Opinión">';
+                                    echo '<div class="sin-imagen"><i class="fas fa-image"></i><span>Sin imagen de opinion</span></div>';
                                 }
                                 ?>
                                 <?php if (!empty($opinion['pie_foto'])): ?>

@@ -203,4 +203,34 @@ body {
         padding: 0.8rem 1.5rem;
         font-size: 0.95rem;
     }
+
+    .sin-imagen {
+        height: 200px;
+    }
+}
+
+/* ===== SIN IMAGEN ===== */
+.sin-imagen {
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #64748b;
+    gap: 0.8rem;
+}
+
+.sin-imagen i {
+    font-size: 3.5rem;
+    opacity: 0.6;
+}
+
+.sin-imagen span {
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }

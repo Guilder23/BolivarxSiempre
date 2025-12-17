@@ -56,7 +56,7 @@ if ($conn) {
                                     $imagen_url = 'assets/img/historia/' . htmlspecialchars($historia['imagen']);
                                     echo '<img src="' . $imagen_url . '" alt="' . htmlspecialchars($historia['titulo']) . '">';
                                 } else {
-                                    echo '<img src="assets/img/historia.jpg" alt="Historia">';
+                                    echo '<div class="sin-imagen"><i class="fas fa-image"></i><span>Sin imagen de historia</span></div>';
                                 }
                                 ?>
                                 <?php if (!empty($historia['pie_foto'])): ?>
