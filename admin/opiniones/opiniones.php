@@ -242,14 +242,23 @@ $usuario = obtener_usuario_actual();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestionar Opiniones - Bolivar por siempre</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../../assets/css/style.css">
     <link rel="stylesheet" href="../../assets/css/admin/dashboard.css">
     <link rel="stylesheet" href="../../assets/css/admin/noticias.css">
 </head>
 <body>
     <div class="admin-container">
+        <!-- Botón Toggle Sidebar Móvil -->
+        <button class="sidebar-toggle" id="sidebarToggle" onclick="toggleSidebar()" aria-label="Abrir menú">
+            <i class="fas fa-bars"></i>
+        </button>
+        
+        <!-- Overlay para cerrar sidebar -->
+        <div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
+        
         <!-- SIDEBAR -->
-        <aside class="sidebar">
+        <aside class="sidebar" id="adminSidebar">
             <div class="sidebar-header">
                 <h3>BOLIVAR por siempre</h3>
             </div>
@@ -489,6 +498,47 @@ $usuario = obtener_usuario_actual();
                 reader.readAsDataURL(file);
             }
         }
+        
+        // Toggle Sidebar para móvil
+        function toggleSidebar() {
+            const sidebar = document.getElementById('adminSidebar');
+            const overlay = document.getElementById('sidebarOverlay');
+            const toggleBtn = document.getElementById('sidebarToggle');
+            
+            sidebar.classList.toggle('active');
+            overlay.classList.toggle('active');
+            
+            const icon = toggleBtn.querySelector('i');
+            if (sidebar.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        }
+        
+        function closeSidebar() {
+            const sidebar = document.getElementById('adminSidebar');
+            const overlay = document.getElementById('sidebarOverlay');
+            const toggleBtn = document.getElementById('sidebarToggle');
+            const icon = toggleBtn.querySelector('i');
+            
+            sidebar.classList.remove('active');
+            overlay.classList.remove('active');
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+        }
+        
+        document.querySelectorAll('.sidebar-nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) closeSidebar();
+            });
+        });
+        
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeSidebar();
+        });
     </script>
 </body>
 </html>

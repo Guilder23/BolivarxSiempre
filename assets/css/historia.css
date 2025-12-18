@@ -290,18 +290,80 @@ body {
 @media (max-width: 768px) {
     .page-header {
         height: 250px;
+        margin-top: 70px;
+        padding: 2rem;
     }
 
     .page-header h1 {
         font-size: 2rem;
     }
 
+    .section-content {
+        padding: 0 1rem 3rem;
+    }
+
     .historias-grid {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .historia-card {
+        border-radius: 12px;
     }
 
     .footer-container {
         grid-template-columns: 1fr;
+        text-align: center;
     }
 }
 
+/* ===== RESPONSIVE MÓVIL (480px) ===== */
+@media (max-width: 480px) {
+    .page-header {
+        height: 200px;
+        margin-top: 60px;
+        padding: 1.5rem;
+    }
+
+    .page-header h1 {
+        font-size: 1.6rem;
+    }
+
+    .section-content {
+        padding: 0 0.8rem 2rem;
+    }
+
+    .historias-grid {
+        gap: 1rem;
+    }
+
+    .historia-card {
+        border-radius: 10px;
+    }
+
+    .historia-content {
+        padding: 1rem;
+    }
+
+    .historia-content h3 {
+        font-size: 1.1rem;
+    }
+
+    .historia-meta {
+        font-size: 0.8rem;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .social-icons a {
+        width: 35px;
+        height: 35px;
+    }
+
+    .footer-bottom {
+        font-size: 0.85rem;
+    }
+}

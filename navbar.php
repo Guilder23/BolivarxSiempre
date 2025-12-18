@@ -8,7 +8,18 @@
 
 <nav class="navbar-fixed">
     <div class="logo">Bolívar por Siempre</div>
-    <ul>
+    
+    <!-- Botón Hamburguesa -->
+    <button class="hamburger-btn" id="hamburgerBtn" onclick="toggleMenu()" aria-label="Abrir menú">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+    </button>
+    
+    <!-- Overlay para cerrar menú al hacer clic fuera -->
+    <div class="nav-overlay" id="navOverlay" onclick="closeMenu()"></div>
+    
+    <ul class="nav-menu" id="navMenu">
         <li><a href="index.php">Inicio</a></li>
         <li><a href="mision.php">Misión y Visión</a></li>
         <li><a href="opinion.php">Opinión</a></li>
@@ -17,13 +28,54 @@
         <li><a href="historia.php">Historia</a></li>
         <li><a href="tabla.php">Tabla</a></li>
         <?php if(estoy_autenticado()): ?>
-            <li><a href="admin/dashboard.php" style="color: #51cf66; font-weight: 600;">Admin</a></li>
+            <li><a href="admin/dashboard.php" class="nav-admin-link">Admin</a></li>
             <li><a href="includes/auth.php?logout=1">Salir</a></li>
         <?php else: ?>
-            <li><a href="#" class="btn-login" onclick="abrirModalLogin(event)" style="background: linear-gradient(135deg, #5a7bb7, #1e3a5f); color: white !important ; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-weight: 600; ">Login</a></li>
+            <li><a href="#" class="btn-login" onclick="abrirModalLogin(event)">Login</a></li>
         <?php endif; ?>
     </ul>
 </nav>
+
+<!-- Script del menú hamburguesa -->
+<script>
+function toggleMenu() {
+    const navMenu = document.getElementById('navMenu');
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const navOverlay = document.getElementById('navOverlay');
+    
+    navMenu.classList.toggle('active');
+    hamburgerBtn.classList.toggle('active');
+    navOverlay.classList.toggle('active');
+    document.body.classList.toggle('menu-open');
+}
+
+function closeMenu() {
+    const navMenu = document.getElementById('navMenu');
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const navOverlay = document.getElementById('navOverlay');
+    
+    navMenu.classList.remove('active');
+    hamburgerBtn.classList.remove('active');
+    navOverlay.classList.remove('active');
+    document.body.classList.remove('menu-open');
+}
+
+// Cerrar menú al hacer clic en un enlace
+document.querySelectorAll('.nav-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+        if (window.innerWidth <= 768) {
+            closeMenu();
+        }
+    });
+});
+
+// Cerrar menú con tecla Escape
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        closeMenu();
+    }
+});
+</script>
 
 <!-- Modal de Login Mejorado -->
 <div id="loginModal" class="modal">

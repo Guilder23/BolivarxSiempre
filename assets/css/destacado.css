@@ -209,6 +209,58 @@ body {
     }
 }
 
+/* ===== RESPONSIVE MÓVIL (480px) ===== */
+@media (max-width: 480px) {
+    .section-content {
+        margin-top: 70px;
+        padding: 0 0.8rem;
+    }
+
+    .section-content h1 {
+        font-size: 1.8rem;
+        margin: 2rem 0 0.8rem;
+    }
+
+    .featured-card {
+        padding: 1rem;
+        border-radius: 12px;
+        margin-bottom: 1.5rem;
+    }
+
+    .featured-card img {
+        height: 250px;
+        border-radius: 10px;
+    }
+
+    .featured-card-content {
+        padding: 1.5rem;
+    }
+
+    .featured-card .pie-foto {
+        padding: 0.6rem 1rem;
+        font-size: 0.85rem;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+        padding: 0.8rem 1.2rem;
+        font-size: 0.9rem;
+    }
+
+    .sin-imagen {
+        height: 150px;
+    }
+
+    .sin-imagen i {
+        font-size: 2.5rem;
+    }
+
+    .sin-imagen span {
+        font-size: 0.95rem;
+    }
+}
+
 /* ===== SIN IMAGEN ===== */
 .sin-imagen {
     width: 100%;

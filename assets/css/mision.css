@@ -321,3 +321,94 @@ body {
   background: #005fa3;
   transform: scale(1.05);
 }
+
+/* ===== RESPONSIVE TABLET (768px) ===== */
+@media (max-width: 768px) {
+    .section-content {
+        margin-top: 80px;
+        padding: 0 1rem;
+        max-width: 100%;
+    }
+
+    .section-content h1 {
+        font-size: 2.2rem;
+        margin: 2rem 0 0.8rem;
+    }
+
+    .section-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .section-content p {
+        font-size: 1rem;
+        padding: 1.2rem;
+    }
+
+    .section-image {
+        border-radius: 12px;
+        margin: 1.5rem 0;
+    }
+
+    .objectives-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        margin: 2rem 0;
+    }
+
+    .objective-card {
+        padding: 2rem;
+        border-radius: 12px;
+    }
+
+    .objective-card h3 {
+        font-size: 1.2rem;
+    }
+}
+
+/* ===== RESPONSIVE MÓVIL (480px) ===== */
+@media (max-width: 480px) {
+    .section-content {
+        margin-top: 70px;
+        padding: 0 0.8rem;
+    }
+
+    .section-content h1 {
+        font-size: 1.7rem;
+    }
+
+    .section-content h2 {
+        font-size: 1.3rem;
+    }
+
+    .section-content p {
+        font-size: 0.95rem;
+        padding: 1rem;
+        border-left-width: 3px;
+    }
+
+    .section-image {
+        border-radius: 10px;
+    }
+
+    .objectives-grid {
+        gap: 1rem;
+    }
+
+    .objective-card {
+        padding: 1.5rem;
+    }
+
+    .objective-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .objective-card p {
+        font-size: 0.95rem;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+        padding: 0.8rem 1.2rem;
+    }
+}
