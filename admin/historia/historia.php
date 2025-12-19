@@ -211,9 +211,11 @@ if ($accion === 'obtener_tabla') {
                 <td><span class="badge badge-<?php echo $historia['estado']; ?>"><?php echo ucfirst($historia['estado']); ?></span></td>
                 <td><?php echo date('d/m/Y H:i', strtotime($historia['fecha_creacion'])); ?></td>
                 <td>
-                    <button class="btn-action btn-secondary" onclick="abrirModalAdmin('modalVerHistoria', 'ver', <?php echo $historia['id']; ?>)">Ver</button>
-                    <button class="btn-action btn-primary" onclick="abrirModalAdmin('modalEditarHistoria', 'editar', <?php echo $historia['id']; ?>)">Editar</button>
-                    <button class="btn-action btn-danger" onclick="abrirModalConfirmacion('eliminar_historia', <?php echo $historia['id']; ?>, '<?php echo htmlspecialchars($historia['titulo']); ?>')">Eliminar</button>
+                    <div class="acciones">
+                        <button class="btn-action btn-secondary" onclick="abrirModalAdmin('modalVerHistoria', 'ver', <?php echo $historia['id']; ?>)">Ver</button>
+                        <button class="btn-action btn-primary" onclick="abrirModalAdmin('modalEditarHistoria', 'editar', <?php echo $historia['id']; ?>)">Editar</button>
+                        <button class="btn-action btn-danger" onclick="abrirModalConfirmacion('eliminar_historia', <?php echo $historia['id']; ?>, '<?php echo htmlspecialchars($historia['titulo']); ?>')">Eliminar</button>
+                    </div>
                 </td>
             </tr>
         <?php endforeach; ?>
@@ -243,7 +245,7 @@ $usuario = obtener_usuario_actual();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestionar Historia - Bolivar por siempre</title>
+    <title>Gestión de Historia - Bolivar por siempre</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../../assets/css/style.css">
     <link rel="stylesheet" href="../../assets/css/admin/dashboard.css">
@@ -268,8 +270,8 @@ $usuario = obtener_usuario_actual();
                 <ul>
                     <li><a href="../dashboard.php">Dashboard</a></li>
                     <li><a href="../noticias/noticias.php">Gestionar Noticias</a></li>
-                    <li><a href="../opiniones/opiniones.php">Gestionar Opiniones</a></li>
-                    <li><a href="historia.php" class="active">Gestionar Historia</a></li>
+                    <li><a href="../opiniones/opiniones.php">Gestión de Opiniones</a></li>
+                    <li><a href="historia.php" class="active">Gestión de Historia</a></li>
                     <li><a href="../tabla_posiciones/tabla_posiciones.php">Gestionar Posiciones</a></li>
                     <li class="divider"></li>
                     <li><a href="../../?logout=1" class="logout">Cerrar Sesión</a></li>
@@ -281,7 +283,7 @@ $usuario = obtener_usuario_actual();
         <main class="admin-content">
             <!-- TOP BAR -->
             <div class="admin-topbar">
-                <h1>Gestionar Historia</h1>
+                <h1>Gestión de Historia</h1>
                 <div class="user-info">
                     <span><?php echo htmlspecialchars($usuario['nombre']); ?></span>
                     <small><?php echo ucfirst($usuario['rol']); ?></small>
@@ -297,7 +299,8 @@ $usuario = obtener_usuario_actual();
                 </div>
 
                 <!-- TABLA DE HISTORIAS -->
-                <table class="admin-table">
+                <div class="table-container">
+                    <table class="admin-table">
                     <thead>
                         <tr>
                             <th>Título</th>
@@ -316,9 +319,11 @@ $usuario = obtener_usuario_actual();
                                     <td><span class="badge badge-<?php echo $historia['estado']; ?>"><?php echo ucfirst($historia['estado']); ?></span></td>
                                     <td><?php echo date('d/m/Y H:i', strtotime($historia['fecha_creacion'])); ?></td>
                                     <td>
-                                        <button class="btn-action btn-primary" onclick="abrirModalAdmin('modalVerHistoria', 'ver', <?php echo $historia['id']; ?>)">Ver</button>
-                                        <button class="btn-action btn-primary" onclick="abrirModalAdmin('modalEditarHistoria', 'editar', <?php echo $historia['id']; ?>)">Editar</button>
-                                        <button class="btn-action btn-danger" onclick="abrirModalConfirmacion('eliminar_historia', <?php echo $historia['id']; ?>, '<?php echo htmlspecialchars($historia['titulo']); ?>')">Eliminar</button>
+                                        <div class="acciones">
+                                            <button class="btn-action btn-secondary" onclick="abrirModalAdmin('modalVerHistoria', 'ver', <?php echo $historia['id']; ?>)">Ver</button>
+                                            <button class="btn-action btn-primary" onclick="abrirModalAdmin('modalEditarHistoria', 'editar', <?php echo $historia['id']; ?>)">Editar</button>
+                                            <button class="btn-action btn-danger" onclick="abrirModalConfirmacion('eliminar_historia', <?php echo $historia['id']; ?>, '<?php echo htmlspecialchars($historia['titulo']); ?>')">Eliminar</button>
+                                        </div>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>

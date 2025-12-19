@@ -209,9 +209,11 @@ if ($accion === 'obtener_tabla') {
                 <td><span class="badge badge-<?php echo $opinion['estado']; ?>"><?php echo ucfirst($opinion['estado']); ?></span></td>
                 <td><?php echo date('d/m/Y H:i', strtotime($opinion['fecha_creacion'])); ?></td>
                 <td>
-                    <button class="btn-action btn-secondary" onclick="abrirModalAdmin('modalVerOpinion', 'ver', <?php echo $opinion['id']; ?>)">Ver</button>
-                    <button class="btn-action btn-primary" onclick="abrirModalAdmin('modalEditarOpinion', 'editar', <?php echo $opinion['id']; ?>)">Editar</button>
-                    <button class="btn-action btn-danger" onclick="abrirModalConfirmacion('eliminar_opinion', <?php echo $opinion['id']; ?>, '<?php echo htmlspecialchars($opinion['titulo']); ?>')">Eliminar</button>
+                    <div class="acciones">
+                        <button class="btn-action btn-secondary" onclick="abrirModalAdmin('modalVerOpinion', 'ver', <?php echo $opinion['id']; ?>)">Ver</button>
+                        <button class="btn-action btn-primary" onclick="abrirModalAdmin('modalEditarOpinion', 'editar', <?php echo $opinion['id']; ?>)">Editar</button>
+                        <button class="btn-action btn-danger" onclick="abrirModalConfirmacion('eliminar_opinion', <?php echo $opinion['id']; ?>, '<?php echo htmlspecialchars($opinion['titulo']); ?>')">Eliminar</button>
+                    </div>
                 </td>
             </tr>
         <?php endforeach; ?>
@@ -241,7 +243,7 @@ $usuario = obtener_usuario_actual();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestionar Opiniones - Bolivar por siempre</title>
+    <title>Gestión de Opiniones - Bolivar por siempre</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../../assets/css/style.css">
     <link rel="stylesheet" href="../../assets/css/admin/dashboard.css">
@@ -266,8 +268,8 @@ $usuario = obtener_usuario_actual();
                 <ul>
                     <li><a href="../dashboard.php">Dashboard</a></li>
                     <li><a href="../noticias/noticias.php">Gestionar Noticias</a></li>
-                    <li><a href="opiniones.php" class="active">Gestionar Opiniones</a></li>
-                    <li><a href="../historia/historia.php">Gestionar Historia</a></li>
+                    <li><a href="opiniones.php" class="active">Gestión de Opiniones</a></li>
+                    <li><a href="../historia/historia.php">Gestión de Historia</a></li>
                     <li><a href="../tabla_posiciones/tabla_posiciones.php">Gestionar Posiciones</a></li>
                     <li class="divider"></li>
                     <li><a href="../../?logout=1" class="logout">Cerrar Sesión</a></li>
@@ -279,7 +281,7 @@ $usuario = obtener_usuario_actual();
         <main class="admin-content">
             <!-- TOP BAR -->
             <div class="admin-topbar">
-                <h1>Gestionar Opiniones</h1>
+                <h1>Gestión de Opiniones</h1>
                 <div class="user-info">
                     <span><?php echo htmlspecialchars($usuario['nombre']); ?></span>
                     <small><?php echo ucfirst($usuario['rol']); ?></small>
@@ -295,7 +297,8 @@ $usuario = obtener_usuario_actual();
                 </div>
 
                 <!-- TABLA DE OPINIONES -->
-                <table class="admin-table">
+                <div class="table-container">
+                    <table class="admin-table">
                     <thead>
                         <tr>
                             <th>Título</th>
@@ -314,9 +317,11 @@ $usuario = obtener_usuario_actual();
                                     <td><span class="badge badge-<?php echo $opinion['estado']; ?>"><?php echo ucfirst($opinion['estado']); ?></span></td>
                                     <td><?php echo date('d/m/Y H:i', strtotime($opinion['fecha_creacion'])); ?></td>
                                     <td>
-                                        <button class="btn-action btn-primary" onclick="abrirModalAdmin('modalVerOpinion', 'ver', <?php echo $opinion['id']; ?>)">Ver</button>
-                                        <button class="btn-action btn-primary" onclick="abrirModalAdmin('modalEditarOpinion', 'editar', <?php echo $opinion['id']; ?>)">Editar</button>
-                                        <button class="btn-action btn-danger" onclick="abrirModalConfirmacion('eliminar_opinion', <?php echo $opinion['id']; ?>, '<?php echo htmlspecialchars($opinion['titulo']); ?>')">Eliminar</button>
+                                        <div class="acciones">
+                                            <button class="btn-action btn-secondary" onclick="abrirModalAdmin('modalVerOpinion', 'ver', <?php echo $opinion['id']; ?>)">Ver</button>
+                                            <button class="btn-action btn-primary" onclick="abrirModalAdmin('modalEditarOpinion', 'editar', <?php echo $opinion['id']; ?>)">Editar</button>
+                                            <button class="btn-action btn-danger" onclick="abrirModalConfirmacion('eliminar_opinion', <?php echo $opinion['id']; ?>, '<?php echo htmlspecialchars($opinion['titulo']); ?>')">Eliminar</button>
+                                        </div>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>

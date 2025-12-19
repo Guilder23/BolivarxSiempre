@@ -239,7 +239,7 @@ $usuario = obtener_usuario_actual();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestionar Noticias - Bolivar por siempre</title>
+    <title>Gestión de Noticias - Bolivar por siempre</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../../assets/css/style.css">
     <link rel="stylesheet" href="../../assets/css/admin/dashboard.css">
@@ -263,10 +263,10 @@ $usuario = obtener_usuario_actual();
             <nav class="sidebar-nav">
                 <ul>
                     <li><a href="../dashboard.php">Dashboard</a></li>
-                    <li><a href="noticias.php" class="active">Gestionar Noticias</a></li>
-                    <li><a href="../opiniones/opiniones.php">Gestionar Opiniones</a></li>
-                    <li><a href="../historia/historia.php">Gestionar Historia</a></li>
-                    <li><a href="../tabla_posiciones/tabla_posiciones.php">Gestionar Posiciones</a></li>
+                    <li><a href="noticias.php" class="active">Gestión de Noticias</a></li>
+                    <li><a href="../opiniones/opiniones.php">Gestión de Opiniones</a></li>
+                    <li><a href="../historia/historia.php">Gestión de Historia</a></li>
+                    <li><a href="../tabla_posiciones/tabla_posiciones.php">Gestión de Posiciones</a></li>
                     <li class="divider"></li>
                     <li><a href="../../?logout=1" class="logout">Cerrar Sesión</a></li>
                 </ul>
@@ -277,7 +277,7 @@ $usuario = obtener_usuario_actual();
         <main class="admin-content">
             <!-- TOP BAR -->
             <div class="admin-topbar">
-                <h1>Gestionar Noticias</h1>
+                <h1>Gestión de Noticias</h1>
                 <div class="user-info">
                     <span><?php echo htmlspecialchars($usuario['nombre']); ?></span>
                     <small><?php echo ucfirst($usuario['rol']); ?></small>

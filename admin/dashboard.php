@@ -193,10 +193,10 @@ $resultado = $conn->query("SELECT id, titulo, autor_id, estado, fecha_actualizac
             <nav class="sidebar-nav">
                 <ul>
                     <li><a href="dashboard.php" class="active">Dashboard</a></li>
-                    <li><a href="noticias/noticias.php">Gestionar Noticias</a></li>
-                    <li><a href="opiniones/opiniones.php">Gestionar Opiniones</a></li>
-                    <li><a href="historia/historia.php">Gestionar Historia</a></li>
-                    <li><a href="tabla_posiciones/tabla_posiciones.php">Gestionar Posiciones</a></li>
+                    <li><a href="noticias/noticias.php">Gestión de Noticias</a></li>
+                    <li><a href="opiniones/opiniones.php">Gestión de Opiniones</a></li>
+                    <li><a href="historia/historia.php">Gestión de Historia</a></li>
+                    <li><a href="tabla_posiciones/tabla_posiciones.php">Gestión de Posiciones</a></li>
                     <li class="divider"></li>
                     <li><a href="../includes/auth.php?logout=1" class="logout">Cerrar Sesión</a></li>
                 </ul>
@@ -249,7 +249,7 @@ $resultado = $conn->query("SELECT id, titulo, autor_id, estado, fecha_actualizac
                                 <span class="stat-item">📝 Borrador: <?php echo $estadisticas['equipos_borrador']; ?></span>
                                 <span class="stat-item">❌ Cancelados: <?php echo $estadisticas['equipos_cancelados']; ?></span>
                             </div>
-                            <a href="tabla_posiciones/tabla_posiciones.php" class="btn-card">Gestionar →</a>
+                            <a href="tabla_posiciones/tabla_posiciones.php" class="btn-card">Gestión →</a>
                         </div>
                     </div>
 
