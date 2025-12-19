@@ -687,8 +687,9 @@ body.menu-open {
     }
 
     .nav-menu {
-        width: 100%;
-        right: -100%;
+        width: 260px;
+        max-width: 80%;
+        right: -280px;
     }
 
     .page-container {

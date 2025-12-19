@@ -596,8 +596,9 @@
     }
 
     .sidebar {
-        width: 100%;
-        left: -100%;
+        width: 260px;
+        max-width: 80%;
+        left: -280px;
     }
 
     .sidebar.active {
