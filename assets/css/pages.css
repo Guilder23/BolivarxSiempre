@@ -17,8 +17,8 @@ body {
   z-index: 100;
   box-shadow: 0 2px 12px rgba(0,0,0,0.08);
 }
-.navbar-fixed .logo { font-size: 1.8rem; font-weight: bold; }
-.navbar-fixed ul { list-style: none; display: flex; gap: 2rem; margin: 0; padding: 0; }
+.navbar-fixed .logo { font-size: 1.5rem; font-weight: bold; }
+.navbar-fixed ul { list-style: none; display: flex; gap: 1rem; margin: 0; padding: 0; }
 .navbar-fixed ul li a { color: #fff; text-decoration: none; font-weight: 500; }
 .navbar-fixed ul li a:hover { color: #003366; }
 

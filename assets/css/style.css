@@ -40,7 +40,7 @@ body {
 .navbar-fixed ul {
     list-style: none;
     display: flex;
-    gap: 2rem;
+    gap: 0.8rem;
     margin: 0;
     padding: 0;
     align-items: center;
