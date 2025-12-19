@@ -459,6 +459,10 @@
     transform: scale(1.05);
 }
 
+.sidebar-toggle.sidebar-open {
+    z-index: 30;
+}
+
 .sidebar-overlay {
     display: none;
     position: fixed;

@@ -388,6 +388,7 @@ $usuario = obtener_usuario_actual();
             
             sidebar.classList.toggle('active');
             overlay.classList.toggle('active');
+            toggleBtn.classList.toggle('sidebar-open');
             
             const icon = toggleBtn.querySelector('i');
             if (sidebar.classList.contains('active')) {
@@ -407,6 +408,7 @@ $usuario = obtener_usuario_actual();
             
             sidebar.classList.remove('active');
             overlay.classList.remove('active');
+            toggleBtn.classList.remove('sidebar-open');
             icon.classList.remove('fa-times');
             icon.classList.add('fa-bars');
         }
